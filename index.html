@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Olimpíada Brasileira de Estatística (OBE) - USP São Carlos. Promovendo o ensino da estatística e ciência de dados no Brasil.">
+    <title>OBE - Olimpíada Brasileira de Estatística</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 40, 85, 0.8), rgba(0, 40, 85, 0.8)), url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .stat-icon {
+            transition: all 0.3s ease;
+        }
+        .stat-icon:hover {
+            transform: translateY(-5px);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0072CE;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="text-black bg-white">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#home" class="text-2xl font-bold text-[#002855] flex items-center">
+                    <img src="https://i.imgur.com/0Tr568p.png"
+                        class="h-12 ">
+                    <span>OBE</span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-[#002855] font-medium">Quem Somos</a>
+                <a href="#olympiad" class="nav-link text-[#002855] font-medium">A Olimpíada</a>
+                <a href="#mission" class="nav-link text-[#002855] font-medium">Missão</a>
+                <a href="#contact" class="nav-link text-[#002855] font-medium">Contato</a>
+            </div>
+            
+            <a href="#register" class="hidden md:block bg-[#0072CE] text-white px-6 py-2 rounded-full font-medium btn-hover">
+                Quero Participar
+            </a>
+            
+            <button id="mobile-menu-button" class="md:hidden text-[#002855]">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white w-full px-4 pb-4 shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#about" class="nav-link text-[#002855] font-medium py-2">Quem Somos</a>
+                <a href="#olympiad" class="nav-link text-[#002855] font-medium py-2">A Olimpíada</a>
+                <a href="#mission" class="nav-link text-[#002855] font-medium py-2">Missão</a>
+                <a href="#contact" class="nav-link text-[#002855] font-medium py-2">Contato</a>
+                <a href="#register" class="bg-[#0072CE] text-white px-6 py-2 rounded-full font-medium text-center btn-hover">
+                    Quero Participar
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-4 py-20 md:py-32">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Olimpíada Brasileira de Estatística</h1>
+                <p class="text-xl md:text-2xl mb-8">USP - São Carlos</p>
+                <p class="text-lg mb-10">Promovendo o ensino da estatística e ciência de dados para estudantes de todo o Brasil.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#register" class="bg-[#0072CE] text-white px-8 py-3 rounded-full font-bold text-center btn-hover">
+                        Se inscreva aqui
+                    </a>
+                    <a href="#about" class="bg-white text-[#002855] px-8 py-3 rounded-full font-bold text-center btn-hover">
+                        Saiba mais
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-[#F5F5F5]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">Quem Somos</h2>
+            
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <p class="text-lg mb-6">Somos um grupo estudantil formado majoritariamente por graduandos do ICMC-USP do curso de Estatística e Ciência de Dados, comprometidos com a democratização do conhecimento estatístico no Brasil.</p>
+                    <p class="text-lg mb-6">Nossa equipe é composta por apaixonados por educação e estatística, que acreditam no poder transformador do ensino de qualidade para formar cidadãos críticos e conscientes.</p>
+                    <p class="text-lg">Através da Olimpíada Brasileira de Estatística, buscamos despertar o interesse dos estudantes por essa área fundamental para o desenvolvimento científico e tecnológico do país.</p>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="https://i.imgur.com/0Tr568p.png" 
+                         alt="Equipe da OBE" 
+                         >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Olympiad Section -->
+    <section id="olympiad" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">A Olimpíada</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-[#F5F5F5] p-8 rounded-xl stat-icon">
+                    <div class="bg-[#0072CE] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#002855] mb-4 text-center">Propósito</h3>
+                    <p class="text-center">Estimular o interesse pela Estatística entre estudantes do ensino fundamental e médio, desenvolvendo habilidades analíticas e de interpretação de dados.</p>
+                </div>
+                
+                <div class="bg-[#F5F5F5] p-8 rounded-xl stat-icon">
+                    <div class="bg-[#0072CE] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-universal-access text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#002855] mb-4 text-center">Democratização</h3>
+                    <p class="text-center">A OBE é totalmente gratuita e acessível a estudantes de escolas públicas e particulares de todo o Brasil, promovendo igualdade de oportunidades.</p>
+                </div>
+                
+                <div class="bg-[#F5F5F5] p-8 rounded-xl stat-icon">
+                    <div class="bg-[#0072CE] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-lightbulb text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#002855] mb-4 text-center">Metodologia</h3>
+                    <p class="text-center">Provas desafiadoras e criativas, com problemas baseados em situações reais, estimulando o raciocínio estatístico e a tomada de decisão baseada em dados.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-[#002855] text-white p-8 rounded-xl">
+                <h3 class="text-2xl font-bold mb-4">Como Participar</h3>
+                <p class="mb-6">A Olimpíada Brasileira de Estatística é aberta a estudantes regularmente matriculados em todas as séries do ensino médio.</p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="flex items-start">
+                        <div class="bg-[#0072CE] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>1</span>
+                        </div>
+                        <p>Forme uma equipe de X estudantes e um professor orientador</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-[#0072CE] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>2</span>
+                        </div>
+                        <p>Inscreva-se gratuitamente no período de inscrições</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-[#0072CE] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>3</span>
+                        </div>
+                        <p>Participe das provas e desafios estatísticos</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a id="register" href="https://docs.google.com/forms/d/e/1FAIpQLScDNZp1d2H-BV3tD7SwNy6l-PmN_xMA6Jw5C8LlnunGpqoxEg/viewform" target="_blank" class="bg-[#0072CE] text-white px-8 py-3 rounded-full font-bold inline-block btn-hover">
+                        Quero me inscrever agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="py-20 bg-[#F5F5F5]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">Missão, Visão e Valores</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="bg-[#002855] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-bullseye text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#002855] mb-4 text-center">Missão</h3>
+                    <p class="text-center">Promover o impacto social através do ensino da estatística, formando cidadãos capazes de interpretar e analisar dados de forma crítica e ética.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="bg-[#002855] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-eye text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#002855] mb-4 text-center">Visão</h3>
+                    <p class="text-center">Ser referência nacional no ensino de estatística, contribuindo para uma educação mais ética, cidadã e baseada em evidências científicas.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="bg-[#002855] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-heart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#002855] mb-4 text-center">Valores</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#0072CE] mr-2"></i>
+                            <span>Criatividade</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#0072CE] mr-2"></i>
+                            <span>Ética</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#0072CE] mr-2"></i>
+                            <span>Inclusão</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#0072CE] mr-2"></i>
+                            <span>Excelência</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#0072CE] mr-2"></i>
+                            <span>Colaboração</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="py-16 bg-[#002855] text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Siga-nos nas Redes Sociais</h2>
+            
+            <div class="flex justify-center space-x-8">
+                <a href="https://www.instagram.com/obe.br/" target="_blank" 
+                   class="bg-white text-[#002855] w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover"
+                   aria-label="Instagram da OBE">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/obe-br/posts/?feedView=all" target="_blank" 
+                   class="bg-white text-[#002855] w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover"
+                   aria-label="LinkedIn da OBE">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:marketing@obe-org.com.br" 
+                   class="bg-white text-[#002855] w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover"
+                   aria-label="E-mail da OBE">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">Entre em Contato Conosco</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#002855] mb-4">Informações de Contato</h3>
+                        <p class="mb-6">Estamos disponíveis para tirar dúvidas, receber sugestões e estabelecer parcerias.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="center">
+                                <i class="fas fa-envelope text-[#0072CE] text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">E-mail</p>
+                                    <a href="mailto:marketing@obe-org.com.br" class="text-[#0072CE] hover:underline">marketing@obe-org.com.br</a>
+                                </div>
+                            </div>
+                            <div class="center">
+                                <i class="fas fa-map-marker-alt text-[#0072CE] text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Localização</p>
+                                    <p>ICMC-USP, São Carlos - SP</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col items-center justify-center mt-8">
+                         <h4 class="text-lg font-bold text-[#002855] mb-4">Nossas Redes</h4>
+                          <div class="flex space-x-4">
+                     <a href="https://www.instagram.com/obe.br/" target="_blank"
+                          class="bg-[#002855] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl btn-hover"
+                         aria-label="Instagram da OBE">
+                         <i class="fab fa-instagram"></i>
+                         </a>
+                                 <a href="https://www.linkedin.com/company/106969102/admin/dashboard/" target="_blank"
+                                    class="bg-[#002855] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl btn-hover"
+                                    aria-label="LinkedIn da OBE">
+                                     <i class="fab fa-linkedin-in"></i>
+                                 </a>
+                             </div>
+                         </div>
+
+                    
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#002855] text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#home" class="text-2xl font-bold text-white flex items-center">
+                        <img src="https://i.imgur.com/0Tr568p.png"
+                        class="h-12 "></i>
+                        <span>  OBE</span>
+                    </a>
+                    <p class="mt-2 text-sm">Olimpíada Brasileira de Estatística</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <p class="text-sm mb-4">Realização:</p>
+                    <div class="flex items-center">
+                        <img src="https://web.icmc.usp.br/SCAPINST/identidade_visual/logomarca/NO%20ICMC%20PRETO%20fundo%20transparente.png?Mobile=1&Source=%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3Dbde3e70c%252Da897%252D4e2a%252Dbf3e%252D7f5e9594bebd%26View%3Da7be44e2%252D1aa1%252D40e1%252Daa92%252Db8545c1c68b9%26RootFolder%3D%252FSCAPINST%252Fidentidade%255Fvisual%252Flogomarca%26FolderCTID%3D0x0120005CF1188E1C67B544B10D453367C2C98B%26CurrentPage%3D1" 
+                             alt="ICMC-USP" 
+                             class="h-12">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-[#0072CE] mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2025 Olimpíada Brasileira de Estatística. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 bg-[#0072CE] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg btn-hover hidden"
+            aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
