@@ -38,27 +38,6 @@
             background-attachment: fixed;
         }
         
-        .section-gradient-1 {
-            background: linear-gradient(135deg, var(--lavender) 0%, var(--sky-blue) 50%, var(--water-green) 100%);
-        }
-        
-        .section-gradient-2 {
-            background: linear-gradient(135deg, var(--water-green) 0%, var(--light-blue) 50%, var(--dark-blue) 100%);
-        }
-        
-        .section-gradient-3 {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--soft-purple) 50%, var(--lavender) 100%);
-        }
-        
-        .section-gradient-4 {
-            background: linear-gradient(135deg, var(--lavender) 0%, var(--sky-blue) 50%, var(--white) 100%);
-        }
-        
-        .card-gradient {
-            background: linear-gradient(145deg, var(--white) 0%, var(--lavender) 100%);
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.7);
-        }
         
         .stat-icon {
             transition: all 0.3s ease;
@@ -67,7 +46,7 @@
         
         .stat-icon:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         .nav-link {
@@ -103,7 +82,7 @@
         
         .btn-hover:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
         
         .counter {
@@ -122,15 +101,15 @@
         }
         
         .card-shadow {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
         
         .card-shadow-lg {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
         
         .text-glow {
-            text-shadow: 0 0 8px rgba(135, 206, 235, 0.5);
+            text-shadow: 0 0 8px rgba(135, 206, 235, 0.3);
         }
         
         @keyframes fadeInUp {
@@ -165,12 +144,6 @@
             pointer-events: none;
         }
         
-        .section-divider {
-            height: 100px;
-            background: linear-gradient(to bottom, var(--light-gray), var(--white));
-            clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
-        }
-        
         .backdrop-blur-sm {
             backdrop-filter: blur(8px);
         }
@@ -181,7 +154,7 @@
         
         @keyframes floating {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
         
@@ -213,11 +186,11 @@
         }
         
         .glow-effect {
-            box-shadow: 0 0 15px rgba(64, 224, 208, 0.5);
+            box-shadow: 0 0 15px rgba(64, 224, 208, 0.3);
         }
         
         .glow-effect:hover {
-            box-shadow: 0 0 25px rgba(64, 224, 208, 0.8);
+            box-shadow: 0 0 25px rgba(64, 224, 208, 0.5);
         }
     </style>
 </head>
@@ -266,11 +239,6 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-20 parallax">
-        <div class="wave-shape">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
         <div class="container mx-auto px-4 py-20 md:py-32">
             <div class="max-w-2xl animate-fade-in-up">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight text-white drop-shadow-lg">Olimpíada Brasileira de Estatística</h1>
@@ -289,12 +257,8 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 section-gradient-1 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10">
-            <div class="absolute top-20 left-10 w-40 h-40 rounded-full bg-[#0072CE] blur-3xl"></div>
-            <div class="absolute bottom-10 right-20 w-60 h-60 rounded-full bg-[#6A5ACD] blur-3xl"></div>
-        </div>
-        <div class="container mx-auto px-4 relative">
+    <section id="about" class="py-20 bg-white relative">
+        <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">Quem Somos</h2>
             
             <div class="flex flex-col lg:flex-row items-center">
@@ -312,13 +276,9 @@
         </div>
     </section>
 
-   <!-- Nossos Projetos Section -->
-    <section id="projects" class="py-20 section-gradient-2 relative overflow-hidden text-white">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10">
-            <div class="absolute top-1/3 left-1/4 w-60 h-60 rounded-full bg-[#40E0D0] blur-3xl"></div>
-            <div class="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full bg-[#002855] blur-3xl"></div>
-        </div>
-        <div class="container mx-auto px-4 lg:px-8 relative">
+    <!-- Nossos Projetos Section -->
+    <section id="projects" class="py-20 bg-[#0072CE] text-white relative">
+        <div class="container mx-auto px-4 lg:px-8">
             <div class="flex flex-col lg:flex-row items-start">
                 <!-- Left Column - Text Content -->
                 <div class="lg:w-2/3 lg:pr-12">
@@ -337,10 +297,6 @@
                         
                         <p class="text-lg md:text-xl leading-relaxed">
                             Acreditamos que avaliar não basta. Antes de propor desafios, queremos compartilhar conhecimentos, despertar a curiosidade e mostrar que a Estatística pode — e deve — fazer parte da vida dos estudantes desde cedo, de forma acessível e significativa.
-                        </p>
-                        
-                        <p class="text-lg md:text-xl leading-relaxed">
-                            Esses cursos são o primeiro passo de um movimento maior. Um movimento que começa com a educação e segue com o compromisso de formar jovens que compreendem o mundo a partir dos dados — e que estejam preparados para transformá-lo.
                         </p>
                     </div>
                 </div>
@@ -369,16 +325,12 @@
     </section>
 
     <!-- Olympiad Section -->
-    <section id="olympiad" class="py-20 section-gradient-3 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10">
-            <div class="absolute top-1/4 right-1/4 w-80 h-80 rounded-full bg-[#6A5ACD] blur-3xl"></div>
-            <div class="absolute bottom-1/3 left-1/3 w-60 h-60 rounded-full bg-[#CCCCFF] blur-3xl"></div>
-        </div>
-        <div class="container mx-auto px-4 relative">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center drop-shadow-lg">A Olimpíada</h2>
+    <section id="olympiad" class="py-20 bg-white relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">A Olimpíada</h2>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white/90 p-8 rounded-xl stat-icon card-shadow card-gradient">
+                <div class="bg-white p-8 rounded-xl stat-icon card-shadow border border-[#002855]/10">
                     <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-brain text-2xl"></i>
                     </div>
@@ -386,7 +338,7 @@
                     <p class="text-center text-[#555]">Estimular o interesse pela Estatística entre estudantes do ensino fundamental e médio, desenvolvendo habilidades analíticas e de interpretação de dados.</p>
                 </div>
                 
-                <div class="bg-white/90 p-8 rounded-xl stat-icon card-shadow card-gradient">
+                <div class="bg-white p-8 rounded-xl stat-icon card-shadow border border-[#002855]/10">
                     <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-universal-access text-2xl"></i>
                     </div>
@@ -394,7 +346,7 @@
                     <p class="text-center text-[#555]">A OBE é totalmente gratuita e acessível a estudantes de escolas públicas e particulares de todo o Brasil, promovendo igualdade de oportunidades.</p>
                 </div>
                 
-                <div class="bg-white/90 p-8 rounded-xl stat-icon card-shadow card-gradient">
+                <div class="bg-white p-8 rounded-xl stat-icon card-shadow border border-[#002855]/10">
                     <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-lightbulb text-2xl"></i>
                     </div>
@@ -404,7 +356,7 @@
             </div>
             
             <div class="mt-16 bg-gradient-to-br from-[#002855]/90 to-[#6A5ACD]/90 text-white p-8 rounded-xl card-shadow-lg backdrop-blur-sm border border-white/20">
-                <a id="register" h3 class="text-2xl font-bold mb-4">Como Participar <a></h3>
+                <h3 class="text-2xl font-bold mb-4">Como Participar</h3>
                 <p class="mb-6">A Olimpíada Brasileira de Estatística é aberta a estudantes regularmente matriculados em todas as séries do ensino médio.</p>
                 
                 <div class="grid md:grid-cols-3 gap-6">
@@ -412,7 +364,7 @@
                         <div class="bg-[#40E0D0] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                             <span>1</span>
                         </div>
-                        <p>Forme uma equipe de X estudantes e um professor orientador</p>
+                        <p>Forme uma equipe de 3 estudantes e um professor orientador</p>
                     </div>
                     <div class="flex items-start">
                         <div class="bg-[#40E0D0] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -438,59 +390,55 @@
     </section>
 
     <!-- Mission Section -->
-    <section id="mission" class="py-20 section-gradient-4 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10">
-            <div class="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-[#87CEEB] blur-3xl"></div>
-            <div class="absolute bottom-1/4 left-1/3 w-60 h-60 rounded-full bg-[#40E0D0] blur-3xl"></div>
-        </div>
-        <div class="container mx-auto px-4 relative">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">Missão, Visão e Valores</h2>
+    <section id="mission" class="py-20 bg-[#0072CE] text-white relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center drop-shadow-lg">Missão, Visão e Valores</h2>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white/90 p-8 rounded-xl card-shadow card-gradient">
+                <div class="bg-white/20 p-8 rounded-xl card-shadow backdrop-blur-sm border border-white/30">
                     <div class="bg-gradient-to-br from-[#002855] to-[#6A5ACD] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-bullseye text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[#002855] mb-4 text-center">Missão</h3>
-                    <p class="text-center text-[#555]">Fomentar uma educação que vá além do conhecimento técnico, contribuindo para a formação de cidadãos responsáveis, éticos e comprometidos com a construção de uma sociedade mais justa. Acreditamos que a educação estatística tem o poder de transformar não apenas a vida acadêmica, mais também o impacto coletivo de nossas ações.</p>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Missão</h3>
+                    <p class="text-center text-white/90">Fomentar uma educação que vá além do conhecimento técnico, contribuindo para a formação de cidadãos responsáveis, éticos e comprometidos com a construção de uma sociedade mais justa.</p>
                 </div>
                 
-                <div class="bg-white/90 p-8 rounded-xl card-shadow card-gradient">
+                <div class="bg-white/20 p-8 rounded-xl card-shadow backdrop-blur-sm border border-white/30">
                     <div class="bg-gradient-to-br from-[#002855] to-[#6A5ACD] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-eye text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[#002855] mb-4 text-center">Visão</h3>
-                    <p class="text-center text-[#555]">Causar impacto social por meio da ciência estatística, promovendo a aplicação do conhecimento estatístico para a melhoria da sociedade e a resolução de desafios contemporâneos.</p>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Visão</h3>
+                    <p class="text-center text-white/90">Causar impacto social por meio da ciência estatística, promovendo a aplicação do conhecimento estatístico para a melhoria da sociedade e a resolução de desafios contemporâneos.</p>
                 </div>
                 
-                <div class="bg-white/90 p-8 rounded-xl card-shadow card-gradient">
+                <div class="bg-white/20 p-8 rounded-xl card-shadow backdrop-blur-sm border border-white/30">
                     <div class="bg-gradient-to-br from-[#002855] to-[#6A5ACD] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-heart text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[#002855] mb-4 text-center">Valores</h3>
-                    <ul class="space-y-2 text-[#555]">
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Valores</h3>
+                    <ul class="space-y-2 text-white/90">
                         <li class="flex items-center">
-                            <i class="fas fa-check text-[#0072CE] mr-2"></i>
+                            <i class="fas fa-check text-[#40E0D0] mr-2"></i>
                             <span>Criatividade</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-[#0072CE] mr-2"></i>
+                            <i class="fas fa-check text-[#40E0D0] mr-2"></i>
                             <span>Ética</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-[#0072CE] mr-2"></i>
+                            <i class="fas fa-check text-[#40E0D0] mr-2"></i>
                             <span>Inclusão</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-[#0072CE] mr-2"></i>
+                            <i class="fas fa-check text-[#40E0D0] mr-2"></i>
                             <span>Autonomia intelectual</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-[#0072CE] mr-2"></i>
+                            <i class="fas fa-check text-[#40E0D0] mr-2"></i>
                             <span>Trabalho em equipe</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-[#0072CE] mr-2"></i>
+                            <i class="fas fa-check text-[#40E0D0] mr-2"></i>
                             <span>Intertextualidade</span>
                         </li>
                     </ul>
@@ -498,29 +446,24 @@
             </div>
         </div>
     </section>
-
     <!-- Social Media Section -->
-    <section class="py-16 bg-gradient-to-br from-[#002855] to-[#6A5ACD] text-white relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10">
-            <div class="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-[#40E0D0] blur-3xl"></div>
-            <div class="absolute bottom-1/3 right-1/3 w-60 h-60 rounded-full bg-[#0072CE] blur-3xl"></div>
-        </div>
-        <div class="container mx-auto px-4 relative">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center drop-shadow-lg">Siga-nos nas Redes Sociais</h2>
+    <section class="py-16 bg-white relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">Siga-nos nas Redes Sociais</h2>
             
             <div class="flex justify-center space-x-8">
                 <a href="https://www.instagram.com/obe.br/" target="_blank" 
-                   class="bg-white text-[#002855] w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover glow-effect"
+                   class="bg-[#002855] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover glow-effect"
                    aria-label="Instagram da OBE">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://www.linkedin.com/company/obe-br/posts/?feedView=all" target="_blank" 
-                   class="bg-white text-[#002855] w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover glow-effect"
+                   class="bg-[#002855] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover glow-effect"
                    aria-label="LinkedIn da OBE">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
                 <a href="mailto:marketing@obe-org.com.br" 
-                   class="bg-white text-[#002855] w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover glow-effect"
+                   class="bg-[#002855] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover glow-effect"
                    aria-label="E-mail da OBE">
                     <i class="fas fa-envelope"></i>
                 </a>
@@ -529,43 +472,43 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white relative overflow-hidden">
+    <section id="contact" class="py-20 bg-[#0072CE] text-white relative">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">Entre em Contato Conosco</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center drop-shadow-lg">Entre em Contato Conosco</h2>
             
             <div class="max-w-4xl mx-auto">
                 <div class="text-center">
-                    <div class="bg-white p-8 rounded-xl card-shadow-lg border border-[#002855]/10">
-                        <h3 class="text-xl font-bold text-[#002855] mb-4">Informações de Contato</h3>
-                        <p class="mb-6 text-[#555]">Estamos disponíveis para tirar dúvidas, receber sugestões e estabelecer parcerias.</p>
+                    <div class="bg-white/20 p-8 rounded-xl card-shadow-lg backdrop-blur-sm border border-white/30">
+                        <h3 class="text-xl font-bold text-white mb-4">Informações de Contato</h3>
+                        <p class="mb-6 text-white/90">Estamos disponíveis para tirar dúvidas, receber sugestões e estabelecer parcerias.</p>
                         
                         <div class="space-y-4">
                             <div class="flex items-center justify-center">
-                                <i class="fas fa-envelope text-[#0072CE] text-xl mr-4 mt-1"></i>
+                                <i class="fas fa-envelope text-[#40E0D0] text-xl mr-4 mt-1"></i>
                                 <div>
-                                    <p class="font-semibold text-[#002855]">E-mail</p>
-                                    <a href="mailto:marketing@obe-org.com.br" class="text-[#0072CE] hover:underline">marketing@obe-org.com.br</a>
+                                    <p class="font-semibold text-white">E-mail</p>
+                                    <a href="mailto:marketing@obe-org.com.br" class="text-[#40E0D0] hover:underline">marketing@obe-org.com.br</a>
                                 </div>
                             </div>
                             <div class="flex items-center justify-center">
-                                <i class="fas fa-map-marker-alt text-[#0072CE] text-xl mr-4 mt-1"></i>
+                                <i class="fas fa-map-marker-alt text-[#40E0D0] text-xl mr-4 mt-1"></i>
                                 <div>
-                                    <p class="font-semibold text-[#002855]">Localização</p>
-                                    <p class="text-[#555]">ICMC-USP, São Carlos - SP</p>
+                                    <p class="font-semibold text-white">Localização</p>
+                                    <p class="text-white/90">ICMC-USP, São Carlos - SP</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="flex flex-col items-center justify-center mt-8">
-                            <h4 class="text-lg font-bold text-[#002855] mb-4">Nossas Redes</h4>
+                            <h4 class="text-lg font-bold text-white mb-4">Nossas Redes</h4>
                             <div class="flex space-x-4">
                                 <a href="https://www.instagram.com/obe.br/" target="_blank"
-                                    class="bg-[#002855] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl btn-hover glow-effect"
+                                    class="bg-white text-[#002855] w-12 h-12 rounded-full flex items-center justify-center text-xl btn-hover glow-effect"
                                     aria-label="Instagram da OBE">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                                 <a href="https://www.linkedin.com/company/106969102/admin/dashboard/" target="_blank"
-                                    class="bg-[#002855] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl btn-hover glow-effect"
+                                    class="bg-white text-[#002855] w-12 h-12 rounded-full flex items-center justify-center text-xl btn-hover glow-effect"
                                     aria-label="LinkedIn da OBE">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
@@ -578,12 +521,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-br from-[#002855] to-[#6A5ACD] text-white py-10 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10">
-            <div class="absolute top-1/4 right-1/4 w-80 h-80 rounded-full bg-[#40E0D0] blur-3xl"></div>
-            <div class="absolute bottom-1/3 left-1/3 w-60 h-60 rounded-full bg-[#0072CE] blur-3xl"></div>
-        </div>
-        <div class="container mx-auto px-4 relative">
+    <footer class="bg-[#002855] text-white py-10 relative">
+        <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <a href="#home" class="text-2xl font-bold text-white flex items-center">
