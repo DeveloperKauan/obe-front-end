@@ -219,7 +219,7 @@
             <div class="hidden md:flex items-center space-x-9">
                 <a href="#about" class="nav-link text-lg font-semibold">Quem Somos</a>
                 <a href="#projects" class="nav-link text-lg font-semibold">Nossos Projetos</a>
-                <a href="#why-we-exist" class="nav-link text-lg font-semibold">Motivações </a>
+                <a href="#existimos" class="nav-link text-lg font-semibold">Motivações </a>
                 <a href="#mission" class="nav-link text-lg font-semibold">Missão</a>
                 <a href="#contact" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-6 py-2 rounded-full font-semibold btn-hover glow-effect">
                     Contate-nos
@@ -238,7 +238,7 @@
             <div class="flex flex-col space-y-3">
                 <a href="#about" class="nav-link text-lg font-medium py-2">Quem Somos</a>
                 <a href="#projects" class="nav-link text-lg font-medium py-2">Nossos Projetos</a>
-                <a href="#why-we-exist" class="nav-link text-lg font-medium py-2">Por que existimos</a>
+                <a href="#existimos" class="nav-link text-lg font-medium py-2">Por que existimos</a>
                 <a href="#mission" class="nav-link text-lg font-medium py-2">Missão</a>
                 <a href="#contact" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-6 py-2 rounded-full font-semibold text-center btn-hover glow-effect mt-2">
                     Contate-nos
@@ -247,7 +247,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Seção -->
     <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-20 parallax">
         <div class="container mx-auto px-4 py-20 md:py-32">
             <div class="max-w-2xl animate-fade-in-up">
@@ -266,7 +266,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Sobre section -->
     <section id="about" class="py-20 bg-white relative section-hidden">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">Quem Somos</h2>
@@ -290,7 +290,7 @@
     <section id="projects" class="py-20 bg-[#0072CE] text-white relative section-hidden">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="flex flex-col lg:flex-row items-start">
-                <!-- Left Column - Text Content -->
+                <!-- Texto da esquerda -->
                 <div class="lg:w-2/3 lg:pr-12">
                     <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 drop-shadow-lg">
                         Nossos Projetos
@@ -311,7 +311,7 @@
                     </div>
                 </div>
                 
-                <!-- Right Column - Impact Number -->
+                <!-- Texto da direita e impact number -->
                 <div class="w-auto mx-auto mt-12 lg:mt-0 lg:w-1/3 flex flex-col items-center justify-center bg-white/20 backdrop-blur-sm rounded-xl p-8 border border-white/30 card-shadow-lg">
                     <div class="text-center">
                         <p class="text-xl md:text-2xl text-white mb-2 font-medium">Mais de</p>
@@ -333,8 +333,8 @@
         </div>
     </section>
 
-    <!-- Por que existimos Section -->
-    <section id="why-we-exist" class="py-20 bg-white relative section-hidden">
+    <!-- Por que existimos -->
+    <section id="existimos" class="py-20 bg-white relative section-hidden">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-8 text-center">Por que existimos</h2>
@@ -390,7 +390,7 @@
         </div>
     </section>
 
-    <!-- Mission Section -->
+    <!-- Missão Section -->
     <section id="mission" class="py-20 bg-[#0072CE] text-white relative section-hidden">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center drop-shadow-lg">Missão, Visão e Valores</h2>
@@ -448,7 +448,7 @@
         </div>
     </section>
 
-    <!-- Social Media Section -->
+    <!-- Seção de Social Media -->
     <section class="py-16 bg-white relative section-hidden">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">Siga-nos nas Redes Sociais</h2>
@@ -473,7 +473,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Seção de  Contatos -->
     <section id="contact" class="py-20 bg-[#0072CE] text-white relative section-hidden">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center drop-shadow-lg">Entre em Contato Conosco</h2>
@@ -550,15 +550,17 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+    <!-- Botão de topo -->
     <button id="back-to-top" 
             class="fixed bottom-8 right-8 bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg btn-hover glow-effect hidden"
             aria-label="Voltar ao topo">
         <i class="fas fa-arrow-up"></i>
     </button>
 
+<!-- Java Script -->
+    
     <script>
-        // Mobile Menu Toggle
+        // Menu mobile
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -566,7 +568,7 @@
             mobileMenu.classList.toggle('hidden');
         });
         
-        // Close mobile menu when clicking on a link
+        // Fechar o menu mobile
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -574,7 +576,7 @@
             });
         });
         
-        // Back to Top Button
+        // Voltar ao topo 
         const backToTopButton = document.getElementById('back-to-top');
         
         window.addEventListener('scroll', () => {
@@ -589,7 +591,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Smooth scrolling for anchor links with offset for fixed header
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -599,7 +601,7 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    const offset = 80; // Adjust this value to match your header height
+                    const offset = 80; // Ajustar com o header
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - offset;
                     
@@ -611,7 +613,7 @@
             });
         });
 
-        // Animated counter for impact number
+        // Contador animado
         function animateCounter(elementId, targetNumber, duration = 2000) {
             const element = document.getElementById(elementId);
             const increment = targetNumber / (duration / 16); // 60fps
@@ -627,7 +629,7 @@
             }, 16);
         }
 
-        // Start counter when section is in view
+        // Começar contador ao ver
         const counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -642,7 +644,7 @@
             counterObserver.observe(projectsSection);
         }
 
-        // Scroll animation for sections
+        // Animação de scroll nas seções
         const sections = document.querySelectorAll('.section-hidden');
         
         const sectionObserver = new IntersectionObserver((entries) => {
@@ -661,7 +663,7 @@
             sectionObserver.observe(section);
         });
 
-        // Check if URL has hash and scroll to it on page load
+    
         window.addEventListener('load', () => {
             if (window.location.hash) {
                 const targetElement = document.querySelector(window.location.hash);
