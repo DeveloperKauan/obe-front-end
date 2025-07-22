@@ -16,10 +16,10 @@
             --light-blue: #0072CE;
             --soft-purple: #6A5ACD;
             --water-green: #40E0D0;
-            --sky-blue: #87CEEB; /* Tom claro adicionado */
+            --sky-blue: #87CEEB;
             --white: #FFFFFF;
             --light-gray: #F7FAFC;
-            --text-color: #334155; /* Um cinza escuro mais suave */
+            --text-color: #334155;
         }
         
         body {
@@ -43,21 +43,39 @@
         .card-shadow-lg {
             box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+        /* Efeito de "lift" aprimorado para os cards */
+        .benefit-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px -5px rgba(0, 0, 0, 0.1);
         }
 
+        /* Animação de gradiente para o CTA */
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-gradient {
+            background-size: 200% 200%;
+            animation: gradient-animation 15s ease infinite;
+        }
+
+        /* Animação de entrada para elementos ao rolar a página */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilo para a timeline */
         .timeline-item {
             position: relative;
             padding-bottom: 2.5rem;
@@ -80,6 +98,10 @@
             background: var(--white);
             color: var(--light-blue);
             border: 2px solid var(--sky-blue);
+            transition: transform 0.3s ease;
+        }
+        .timeline-item:hover .timeline-icon {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -87,9 +109,10 @@
     <!-- Header Simplificado -->
     <header class="fixed w-full bg-white/80 shadow-sm z-50 backdrop-blur-sm">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-[#002855] flex items-center">
-                <img src="https://i.imgur.com/0Tr568p.png" class="h-12" alt="Logo OBE">
-                <span class="ml-3">Olimpíada Brasileira de Estatística</span>
+            <a href="index.html" class="text-xl md:text-2xl font-bold text-[#002855] flex items-center">
+                <img src="https://i.imgur.com/0Tr568p.png" class="h-10 md:h-12" alt="Logo OBE">
+                <span class="ml-3 hidden sm:inline">Olimpíada Brasileira de Estatística</span>
+                <span class="ml-3 sm:hidden">OBE</span>
             </a>
             <a href="index.html" class="hidden md:inline-block text-[#002855] font-semibold hover:text-[#0072CE] transition-colors">
                 <i class="fas fa-arrow-left mr-2"></i> Voltar ao Site Principal
@@ -99,93 +122,98 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="bg-white pt-32 pb-20">
-            <div class="container mx-auto px-6 text-center fade-in-up">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-[#002855] leading-tight">
-                    Desperte o Potencial dos seus Alunos
+        <section class="bg-gradient-to-b from-white to-light-gray pt-32 pb-20">
+            <div class="container mx-auto px-6 text-center reveal in-view">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#002855] leading-tight">
+                    Um Movimento para Transformar a Educação com Dados
                 </h1>
-                <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
-                    A Olimpíada Brasileira de Estatística é uma jornada de aprendizado que usa o poder dos dados para desenvolver o pensamento crítico e a criatividade. Junte-se a nós e transforme a educação.
+                <p class="mt-6 max-w-4xl mx-auto text-lg text-gray-600">
+                    A Olimpíada Brasileira de Estatística (OBE) é a primeira olimpíada de estatística das Américas, voltada para estudantes do ensino médio e técnico de todo o Brasil. Mais do que uma competição, ela é um movimento que transforma a relação dos jovens com os dados, desenvolvendo habilidades essenciais para o século XXI.
                 </p>
-                <div class="mt-10">
+                <p class="mt-4 max-w-4xl mx-auto text-lg text-gray-600">
+                    Nosso propósito vai além das provas: queremos formar cidadãos capazes de interpretar criticamente a realidade através dos números. A estatística é apresentada não como uma disciplina isolada, mas como uma ferramenta poderosa para entender e transformar o mundo desde questões locais até desafios globais.
+                </p>
+                 <div class="mt-10">
                     <a href="#register-form" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-10 py-4 rounded-full font-bold text-lg btn-hover">
                         Participe da Jornada OBE
                     </a>
                 </div>
             </div>
         </section>
-
-        <!-- Benefícios Section -->
+        
+        <!-- Detalhes das Fases com Timeline -->
         <section class="py-20 bg-light-gray">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#002855]">Uma Jornada de Descobertas e Crescimento</h2>
-                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Veja como a OBE pode enriquecer a experiência educacional da sua escola.</p>
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#002855]">As Etapas da Jornada OBE</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Um caminho de aprendizado, colaboração e descobertas, desenhado para ser flexível para sua escola.</p>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Card Benefício 1 -->
-                    <div class="bg-white p-8 rounded-xl card-shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
-                        <div class="inline-block p-4 bg-gradient-to-br from-[#87CEEB] to-[#40E0D0] rounded-full mb-4">
-                            <i class="fas fa-lightbulb text-3xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#002855] mb-2">Pensamento Crítico</h3>
-                        <p class="text-gray-600">Alunos aprendem a analisar dados, questionar informações e construir argumentos sólidos, habilidades para toda a vida.</p>
+                <div class="max-w-3xl mx-auto">
+                    <!-- Timeline Item 1: Inscrição -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-icon"><i class="fas fa-paper-plane"></i></div>
+                        <h3 class="text-xl font-bold text-[#002855]">Inscrição das Escolas</h3>
+                        <p class="font-semibold text-[#0072CE] mb-4">Até 24 de Agosto</p>
+                        <p class="mt-2 text-gray-600">O primeiro passo para embarcar nesta jornada. O processo é online, rápido e gratuito para todas as escolas que desejam fazer parte do movimento.</p>
                     </div>
-                    <!-- Card Benefício 2 -->
-                    <div class="bg-white p-8 rounded-xl card-shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
-                        <div class="inline-block p-4 bg-gradient-to-br from-[#6A5ACD] to-[#87CEEB] rounded-full mb-4">
-                            <i class="fas fa-project-diagram text-3xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#002855] mb-2">Conexão e Reconhecimento</h3>
-                        <p class="text-gray-600">Sua escola se conecta a uma iniciativa da USP, ganhando visibilidade e certificados que valorizam o percurso de todos.</p>
+                    <!-- Timeline Item 2: 1ª Fase -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-icon"><i class="fas fa-file-alt"></i></div>
+                        <h3 class="text-xl font-bold text-[#002855]">1ª Fase: A Prova</h3>
+                        <p class="font-semibold text-[#0072CE] mb-4">Aplicação de 14 a 20 de Setembro de 2025</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-sm text-water-green w-5 mr-2 mt-1"></i><div><strong>Formato:</strong> Prova presencial de até 2h com 10 questões de múltipla escolha e 2 discursivas.</div></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-sm text-water-green w-5 mr-2 mt-1"></i><div><strong>Conteúdos:</strong> Probabilidade, visualização e interpretação de dados.</div></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-sm text-water-green w-5 mr-2 mt-1"></i><div><strong>Flexibilidade:</strong> A escola escolhe o melhor dia para aplicar a prova dentro do período.</div></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-sm text-water-green w-5 mr-2 mt-1"></i><div><strong>Autonomia:</strong> A aplicação e correção são feitas pela própria escola com nosso gabarito orientador.</div></li>
+                        </ul>
                     </div>
-                    <!-- Card Benefício 3 -->
-                    <div class="bg-white p-8 rounded-xl card-shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
-                        <div class="inline-block p-4 bg-gradient-to-br from-[#0072CE] to-[#87CEEB] rounded-full mb-4">
-                            <i class="fas fa-book-reader text-3xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#002855] mb-2">Suporte Pedagógico</h3>
-                        <p class="text-gray-600">Oferecemos materiais de apoio e relatórios de desempenho para guiar professores e alunos nesta jornada de conhecimento.</p>
+                    <!-- Timeline Item 3: 2ª Fase -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-icon"><i class="fas fa-users"></i></div>
+                        <h3 class="text-xl font-bold text-[#002855]">2ª Fase: O Desafio Prático</h3>
+                        <p class="font-semibold text-[#6A5ACD] mb-4">Datas a serem divulgadas</p>
+                         <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-sm text-soft-purple w-5 mr-2 mt-1"></i><div><strong>Formato:</strong> Participação em equipes de 1 a 5 alunos.</div></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-sm text-soft-purple w-5 mr-2 mt-1"></i><div><strong>Abordagem:</strong> Análise de dados reais com uma perspectiva investigativa.</div></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-sm text-soft-purple w-5 mr-2 mt-1"></i><div><strong>Produção:</strong> Análises estatísticas completas e apresentação em formatos criativos e acessíveis.</div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Como Funciona / Timeline -->
+        <!-- Benefícios Section -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#002855]">As Etapas da Jornada</h2>
-                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Um caminho de aprendizado, colaboração e descobertas.</p>
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#002855]">Benefícios para a sua Escola</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Ao participar, sua escola se torna parte de um ecossistema de inovação e aprendizado.</p>
                 </div>
-                <div class="max-w-3xl mx-auto">
-                    <!-- Timeline Item 1 -->
-                    <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-paper-plane"></i></div>
-                        <h3 class="text-xl font-bold text-[#002855]">Inscrição das Escolas</h3>
-                        <p class="font-semibold text-[#0072CE]">Até 24 de Agosto de 2025</p>
-                        <p class="mt-2 text-gray-600">O primeiro passo para embarcar nesta jornada. O processo é online, rápido e gratuito para todas as escolas.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card Benefício 1 -->
+                    <div class="bg-light-gray p-8 rounded-xl card-shadow-lg text-center benefit-card reveal">
+                        <div class="inline-block p-4 bg-gradient-to-br from-[#87CEEB] to-[#40E0D0] rounded-full mb-4">
+                            <i class="fas fa-lightbulb text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#002855] mb-2">Ferramentas de Ensino</h3>
+                        <p class="text-gray-600">Acesso a material didático exclusivo e relatórios de desempenho personalizados para apoiar seus alunos.</p>
                     </div>
-                    <!-- Timeline Item 2 -->
-                    <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-search"></i></div>
-                        <h3 class="text-xl font-bold text-[#002855]">1ª Fase: Primeiras Descobertas</h3>
-                        <p class="font-semibold text-[#0072CE]">14 a 20 de Setembro de 2025</p>
-                        <p class="mt-2 text-gray-600">Uma prova individual para explorar conceitos de probabilidade e visualização de dados de forma lúdica e instigante.</p>
+                    <!-- Card Benefício 2 -->
+                    <div class="bg-light-gray p-8 rounded-xl card-shadow-lg text-center benefit-card reveal">
+                        <div class="inline-block p-4 bg-gradient-to-br from-[#6A5ACD] to-[#87CEEB] rounded-full mb-4">
+                            <i class="fas fa-chart-line text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#002855] mb-2">Impacto Educacional</h3>
+                        <p class="text-gray-600">Contribuição direta para a melhoria de indicadores educacionais importantes, como SAEB e ENEM.</p>
                     </div>
-                    <!-- Timeline Item 3 -->
-                    <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-users"></i></div>
-                        <h3 class="text-xl font-bold text-[#002855]">2ª Fase: Análise e Colaboração</h3>
-                        <p class="font-semibold text-[#0072CE]">Datas a serem divulgadas</p>
-                        <p class="mt-2 text-gray-600">Equipes de alunos se unem para analisar um banco de dados real, exercitando a colaboração e a criatividade para apresentar suas conclusões.</p>
-                    </div>
-                    <!-- Timeline Item 4 -->
-                    <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-award"></i></div>
-                        <h3 class="text-xl font-bold text-[#002855]">Celebração do Aprendizado</h3>
-                        <p class="font-semibold text-[#0072CE]">Final do ano letivo</p>
-                        <p class="mt-2 text-gray-600">Todos os participantes recebem certificados que reconhecem sua dedicação e aprendizado ao longo da jornada.</p>
+                    <!-- Card Benefício 3 -->
+                    <div class="bg-light-gray p-8 rounded-xl card-shadow-lg text-center benefit-card reveal">
+                        <div class="inline-block p-4 bg-gradient-to-br from-[#0072CE] to-[#87CEEB] rounded-full mb-4">
+                            <i class="fas fa-university text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#002855] mb-2">Conexão com a Universidade</h3>
+                        <p class="text-gray-600">Oportunidades de conexão com a USP por meio de visitas técnicas e palestras, abrindo portas para o futuro.</p>
                     </div>
                 </div>
             </div>
@@ -194,13 +222,13 @@
         <!-- CTA Final Section -->
         <section id="register-form" class="py-20 bg-light-gray">
             <div class="container mx-auto px-6">
-                <div class="bg-gradient-to-r from-[#002855] to-[#0072CE] rounded-xl p-12 text-center text-white card-shadow-lg">
-                    <h2 class="text-3xl md:text-4xl font-bold">Vamos Juntos Transformar a Educação?</h2>
+                <div class="bg-gradient-to-r from-[#002855] to-[#0072CE] rounded-xl p-8 md:p-12 text-center text-white card-shadow-lg animated-gradient">
+                    <h2 class="text-3xl md:text-4xl font-bold">Garanta o lugar da sua escola neste movimento!</h2>
                     <p class="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
-                        Garanta a participação da sua escola na Olimpíada Brasileira de Estatística e ofereça aos seus alunos uma experiência de aprendizado inesquecível.
+                        Ofereça aos seus alunos uma experiência de aprendizado inesquecível e transformadora.
                     </p>
                     <div class="mt-8">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehV3I7kIZQI9TwWntgoN_u8O4gdiruy7DuDfIRXz-M-zl2JQ/viewform" target="_blank" class="bg-white text-[#0072CE] px-12 py-4 rounded-full font-bold text-lg btn-hover transform hover:scale-105 transition-transform duration-300">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehV3I7kIZQI9TwWntgoN_u8O4gdiruy7DuDfIRXz-M-zl2JQ/viewform" target="_blank" class="bg-white text-[#0072CE] px-10 md:px-12 py-3 md:py-4 rounded-full font-bold text-lg btn-hover transform hover:scale-105 transition-transform duration-300">
                             <i class="fas fa-school mr-2"></i> Inscreva sua Escola
                         </a>
                         <p class="mt-4 text-sm text-white/70">Inscrições abertas até 24 de Agosto</p>
@@ -238,6 +266,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scroll para o botão da hero section
+            const heroButton = document.querySelector('a[href="#register-form"]');
+            if (heroButton) {
+                heroButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.querySelector('#register-form').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Intersection Observer para animar elementos ao rolar
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 
 </body>
 </html>
