@@ -211,7 +211,7 @@
         <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
                 <a href="#home" class="text-2xl font-bold text-[#002855] flex items-center">
-                    <img src="https://i.imgur.com/0Tr568p.png" class="h-12">
+                    <img src="https://i.imgur.com/0Tr568p.png" class="h-12" alt="Logo OBE">
                     <span class="ml-2">OBE</span>
                 </a>
             </div>
@@ -400,45 +400,65 @@
     </section>
 
     <!-- Register Section -->
-    <section id="register" class="py-20 bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white relative section-hidden">
+    <section id="register" class="py-20 bg-white relative section-hidden">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-white/20 backdrop-blur-sm rounded-xl p-8 md:p-12 border border-white/30 card-shadow-lg">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Inscreva-se na OBE</h2>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Informações Importantes</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-xl mr-3 mt-1"></i>
-                                <span>Inscrições totalmente gratuitas</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-xl mr-3 mt-1"></i>
-                                <span>Equipes de 3 estudantes + 1 professor orientador</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-xl mr-3 mt-1"></i>
-                                <span>Para estudantes do ensino médio de todo o Brasil</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-xl mr-3 mt-1"></i>
-                                <span>Período de inscrições: 01/08 a 30/09</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Formulário de Inscrição</h3>
-                        <p class="mb-6">Preencha o formulário oficial para participar da Olimpíada Brasileira de Estatística.</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScDNZp1d2H-BV3tD7SwNy6l-PmN_xMA6Jw5C8LlnunGpqoxEg/viewform" target="_blank" class="bg-white text-[#002855] px-8 py-3 rounded-full font-bold inline-block btn-hover glow-effect w-full text-center">
-                            Acessar Formulário
-                        </a>
-                    </div>
+            <div class="max-w-6xl mx-auto">
+                <!-- Introductory Text -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-4">Participe da Olimpíada Brasileira de Estatística</h2>
+                    <p class="text-lg text-[#002855] max-w-4xl mx-auto leading-relaxed">
+                        A Olimpíada Brasileira de Estatística (OBE) é a primeira olimpíada de estatística das Américas, voltada para estudantes do ensino médio e técnico de todo o Brasil. Mais do que uma competição, ela é um movimento que transforma a relação dos jovens com os dados, desenvolvendo habilidades essenciais para o século XXI.
+                    </p>
+                    <p class="mt-4 text-lg text-[#002855] max-w-4xl mx-auto leading-relaxed">
+                        Nosso propósito vai além das provas: queremos formar cidadãos capazes de interpretar criticamente a realidade através dos números. A estatística é apresentada não como uma disciplina isolada, mas como uma ferramenta poderosa para entender e transformar o mundo – desde questões locais até desafios globais.
+                    </p>
                 </div>
-                
-                <div class="mt-8 text-center">
-                    <p class="text-sm opacity-80">Dúvidas? Entre em contato conosco pelo e-mail: marketing@obe-org.com.br</p>
+
+                <div class="grid md:grid-cols-2 gap-10 items-start">
+                    <!-- Information Column -->
+                    <div class="space-y-8">
+                        <!-- Phase 1 Card -->
+                        <div class="bg-gradient-to-br from-[#002855] to-[#0072CE] text-white p-6 rounded-xl card-shadow-lg">
+                            <h3 class="text-2xl font-bold mb-4 flex items-center"><i class="fas fa-clipboard-list mr-3 text-[#40E0D0]"></i> 1ª Fase da OBE</h3>
+                            <ul class="space-y-3 text-white/90">
+                                <li class="flex items-start"><i class="fas fa-calendar-alt text-[#40E0D0] w-5 mr-2 mt-1"></i><span><strong>Período de aplicação:</strong> entre os dias 14 e 20 de setembro de 2025.</span></li>
+                                <li class="flex items-start"><i class="fas fa-clock text-[#40E0D0] w-5 mr-2 mt-1"></i><span><strong>Flexibilidade:</strong> a escola pode escolher qualquer dia desse intervalo para aplicar a prova.</span></li>
+                                <li class="flex items-start"><i class="fas fa-file-alt text-[#40E0D0] w-5 mr-2 mt-1"></i><span><strong>Formato:</strong> Prova presencial de até 2h, com 10 questões de múltipla escolha e 2 discursivas.</span></li>
+                                <li class="flex items-start"><i class="fas fa-book-open text-[#40E0D0] w-5 mr-2 mt-1"></i><span><strong>Conteúdos:</strong> probabilidade, visualização e interpretação de dados.</span></li>
+                                <li class="flex items-start"><i class="fas fa-school text-[#40E0D0] w-5 mr-2 mt-1"></i><span>Aplicação e correção feitas pela própria escola com nosso gabarito.</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Phase 2 Card -->
+                        <div class="bg-white p-6 rounded-xl card-shadow border border-gray-200">
+                            <h3 class="text-2xl font-bold text-[#002855] mb-4 flex items-center"><i class="fas fa-users mr-3 text-[#6A5ACD]"></i> 2ª Fase (Desafio Prático)</h3>
+                            <ul class="space-y-3 text-[#002855]">
+                                <li class="flex items-start"><i class="fas fa-user-friends text-[#6A5ACD] w-5 mr-2 mt-1"></i><span>Participação em equipes de 1 a 5 alunos.</span></li>
+                                <li class="flex items-start"><i class="fas fa-chart-bar text-[#6A5ACD] w-5 mr-2 mt-1"></i><span>Análise de dados reais com abordagem investigativa.</span></li>
+                                <li class="flex items-start"><i class="fas fa-lightbulb text-[#6A5ACD] w-5 mr-2 mt-1"></i><span>Produção de análises completas e apresentação em formatos criativos.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Benefits and CTA Column -->
+                    <div class="bg-[#F5F5F5] p-8 rounded-xl card-shadow-lg border-l-4 border-[#40E0D0]">
+                        <h3 class="text-2xl font-bold text-[#002855] mb-6 flex items-center"><i class="fas fa-gift mr-3 text-[#0072CE]"></i> Benefícios para sua Escola</h3>
+                        <ul class="space-y-4 mb-8 text-[#002855]">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-[#0072CE] w-5 mr-2 mt-1"></i><span>Acesso a material didático exclusivo.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-[#0072CE] w-5 mr-2 mt-1"></i><span>Relatório de desempenho personalizado dos alunos.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-[#0072CE] w-5 mr-2 mt-1"></i><span>Certificados válidos para horas complementares.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-[#0072CE] w-5 mr-2 mt-1"></i><span>Contribuição para a melhoria dos indicadores educacionais (SAEB, ENEM).</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-[#0072CE] w-5 mr-2 mt-1"></i><span>Conexão com universidades por meio de visitas técnicas e palestras.</span></li>
+                        </ul>
+
+                        <div class="bg-white p-6 rounded-lg text-center border border-gray-200">
+                            <h4 class="text-xl font-bold text-[#002855]">Inscrições até 24/08</h4>
+                            <p class="my-4 text-[#555]">Garanta o lugar da sua escola neste movimento!</p>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScDNZp1d2H-BV3tD7SwNy6l-PmN_xMA6Jw5C8LlnunGpqoxEg/viewform" target="_blank" class="w-full bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-8 py-3 rounded-full font-bold inline-block btn-hover glow-effect">
+                                Inscrever Minha Escola
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -582,7 +602,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <a href="#home" class="text-2xl font-bold text-white flex items-center">
-                        <img src="https://i.imgur.com/0Tr568p.png" class="h-12">
+                        <img src="https://i.imgur.com/0Tr568p.png" class="h-12" alt="Logo OBE">
                         <span class="ml-2">OBE</span>
                     </a>
                     <p class="mt-2 text-sm opacity-80">Olimpíada Brasileira de Estatística</p>
