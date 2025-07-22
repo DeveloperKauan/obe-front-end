@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inscrição para escolas na Olimpíada Brasileira de Estatística (OBE). Uma jornada de aprendizado e descobertas para seus alunos.">
+    <title>Inscrição de Escolas - Olimpíada Brasileira de Estatística</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #002855;
+            --light-blue: #0072CE;
+            --soft-purple: #6A5ACD;
+            --water-green: #40E0D0;
+            --sky-blue: #87CEEB; /* Tom claro adicionado */
+            --white: #FFFFFF;
+            --light-gray: #F7FAFC;
+            --text-color: #334155; /* Um cinza escuro mais suave */
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--white);
+            color: var(--text-color);
+        }
+
+        .btn-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+            box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px 0 rgba(0, 118, 255, 0.23);
+        }
+        
+        .card-shadow-lg {
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+            padding-left: 2.5rem;
+            border-left: 2px solid var(--sky-blue);
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: -1.1rem;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 50%;
+            background: var(--white);
+            color: var(--light-blue);
+            border: 2px solid var(--sky-blue);
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Header Simplificado -->
+    <header class="fixed w-full bg-white/80 shadow-sm z-50 backdrop-blur-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-[#002855] flex items-center">
+                <img src="https://i.imgur.com/0Tr568p.png" class="h-12" alt="Logo OBE">
+                <span class="ml-3">Olimpíada Brasileira de Estatística</span>
+            </a>
+            <a href="index.html" class="hidden md:inline-block text-[#002855] font-semibold hover:text-[#0072CE] transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> Voltar ao Site Principal
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-white pt-32 pb-20">
+            <div class="container mx-auto px-6 text-center fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-[#002855] leading-tight">
+                    Desperte o Potencial dos seus Alunos
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                    A Olimpíada Brasileira de Estatística é uma jornada de aprendizado que usa o poder dos dados para desenvolver o pensamento crítico e a criatividade. Junte-se a nós e transforme a educação.
+                </p>
+                <div class="mt-10">
+                    <a href="#register-form" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-10 py-4 rounded-full font-bold text-lg btn-hover">
+                        Participe da Jornada OBE
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefícios Section -->
+        <section class="py-20 bg-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#002855]">Uma Jornada de Descobertas e Crescimento</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Veja como a OBE pode enriquecer a experiência educacional da sua escola.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card Benefício 1 -->
+                    <div class="bg-white p-8 rounded-xl card-shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="inline-block p-4 bg-gradient-to-br from-[#87CEEB] to-[#40E0D0] rounded-full mb-4">
+                            <i class="fas fa-lightbulb text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#002855] mb-2">Pensamento Crítico</h3>
+                        <p class="text-gray-600">Alunos aprendem a analisar dados, questionar informações e construir argumentos sólidos, habilidades para toda a vida.</p>
+                    </div>
+                    <!-- Card Benefício 2 -->
+                    <div class="bg-white p-8 rounded-xl card-shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="inline-block p-4 bg-gradient-to-br from-[#6A5ACD] to-[#87CEEB] rounded-full mb-4">
+                            <i class="fas fa-project-diagram text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#002855] mb-2">Conexão e Reconhecimento</h3>
+                        <p class="text-gray-600">Sua escola se conecta a uma iniciativa da USP, ganhando visibilidade e certificados que valorizam o percurso de todos.</p>
+                    </div>
+                    <!-- Card Benefício 3 -->
+                    <div class="bg-white p-8 rounded-xl card-shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="inline-block p-4 bg-gradient-to-br from-[#0072CE] to-[#87CEEB] rounded-full mb-4">
+                            <i class="fas fa-book-reader text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#002855] mb-2">Suporte Pedagógico</h3>
+                        <p class="text-gray-600">Oferecemos materiais de apoio e relatórios de desempenho para guiar professores e alunos nesta jornada de conhecimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como Funciona / Timeline -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#002855]">As Etapas da Jornada</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Um caminho de aprendizado, colaboração e descobertas.</p>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-paper-plane"></i></div>
+                        <h3 class="text-xl font-bold text-[#002855]">Inscrição das Escolas</h3>
+                        <p class="font-semibold text-[#0072CE]">Até 24 de Agosto de 2025</p>
+                        <p class="mt-2 text-gray-600">O primeiro passo para embarcar nesta jornada. O processo é online, rápido e gratuito para todas as escolas.</p>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-search"></i></div>
+                        <h3 class="text-xl font-bold text-[#002855]">1ª Fase: Primeiras Descobertas</h3>
+                        <p class="font-semibold text-[#0072CE]">14 a 20 de Setembro de 2025</p>
+                        <p class="mt-2 text-gray-600">Uma prova individual para explorar conceitos de probabilidade e visualização de dados de forma lúdica e instigante.</p>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-users"></i></div>
+                        <h3 class="text-xl font-bold text-[#002855]">2ª Fase: Análise e Colaboração</h3>
+                        <p class="font-semibold text-[#0072CE]">Datas a serem divulgadas</p>
+                        <p class="mt-2 text-gray-600">Equipes de alunos se unem para analisar um banco de dados real, exercitando a colaboração e a criatividade para apresentar suas conclusões.</p>
+                    </div>
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-award"></i></div>
+                        <h3 class="text-xl font-bold text-[#002855]">Celebração do Aprendizado</h3>
+                        <p class="font-semibold text-[#0072CE]">Final do ano letivo</p>
+                        <p class="mt-2 text-gray-600">Todos os participantes recebem certificados que reconhecem sua dedicação e aprendizado ao longo da jornada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final Section -->
+        <section id="register-form" class="py-20 bg-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="bg-gradient-to-r from-[#002855] to-[#0072CE] rounded-xl p-12 text-center text-white card-shadow-lg">
+                    <h2 class="text-3xl md:text-4xl font-bold">Vamos Juntos Transformar a Educação?</h2>
+                    <p class="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
+                        Garanta a participação da sua escola na Olimpíada Brasileira de Estatística e ofereça aos seus alunos uma experiência de aprendizado inesquecível.
+                    </p>
+                    <div class="mt-8">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehV3I7kIZQI9TwWntgoN_u8O4gdiruy7DuDfIRXz-M-zl2JQ/viewform" target="_blank" class="bg-white text-[#0072CE] px-12 py-4 rounded-full font-bold text-lg btn-hover transform hover:scale-105 transition-transform duration-300">
+                            <i class="fas fa-school mr-2"></i> Inscreva sua Escola
+                        </a>
+                        <p class="mt-4 text-sm text-white/70">Inscrições abertas até 24 de Agosto</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer com Contato -->
+    <footer class="bg-[#002855] text-white pt-12 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Olimpíada Brasileira de Estatística</h3>
+                    <p class="text-white/70">Uma iniciativa para promover o letramento estatístico e o pensamento crítico em jovens de todo o Brasil.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Contato</h3>
+                    <ul class="space-y-2 text-white/70">
+                        <li><i class="fas fa-envelope fa-fw mr-2"></i><a href="mailto:marketing@obe-org.com.br" class="hover:text-water-green">marketing@obe-org.com.br</a></li>
+                        <li><i class="fas fa-map-marker-alt fa-fw mr-2"></i>ICMC-USP, São Carlos - SP</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Siga-nos</h3>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="https://www.instagram.com/obe.br/" target="_blank" class="text-2xl hover:text-water-green transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/obe-br/" target="_blank" class="text-2xl hover:text-water-green transition-colors"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/20 mt-8 pt-6 text-center">
+                <p class="text-sm opacity-80">&copy; 2025 Olimpíada Brasileira de Estatística. Realização: ICMC-USP.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
