@@ -8,173 +8,173 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --dark-blue: #002855;
             --light-blue: #0072CE;
             --white: #FFFFFF;
-            --light-gray: #F7FAFC;
-            --text-color: #334155;
-            --success-green: #F0FDF4;
-            --success-border: #22C55E;
+            --slate-50: #F8FAFC;
+            --slate-100: #F1F5F9;
+            --slate-600: #475569;
+            --slate-800: #1E293B;
+            --green-600: #16A34A;
+            --green-700: #15803D;
         }
         
-        body {
-            font-family: 'Montserrat', sans-serif;
+        html {
             scroll-behavior: smooth;
-            background-color: var(--white);
-            color: var(--text-color);
         }
 
-        .btn-hover {
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--slate-800);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .btn {
             transition: all 0.3s ease;
             transform: translateY(0);
         }
         
-        .btn-hover:hover {
+        .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px 0 rgba(0, 118, 255, 0.23);
         }
         
-        .card-shadow-lg {
-            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .reveal.in-view {
-            opacity: 1;
-            transform: translateY(0);
+        .card-shadow {
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
-<body class="scroll-smooth">
-    <header class="fixed w-full bg-white/80 shadow-sm z-50 backdrop-blur-sm">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="index.html" class="text-xl md:text-2xl font-bold text-[#002855] flex items-center">
+<body class="bg-slate-50">
+    <header class="fixed w-full bg-white/80 shadow-sm z-50 backdrop-blur-md border-b border-slate-200/80">
+        <nav class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-xl md:text-2xl font-bold text-dark-blue flex items-center shrink-0">
                 <img src="https://i.imgur.com/0Tr568p.png" class="h-10 md:h-12" alt="Logo OBE">
                 <span class="ml-3 hidden sm:inline">Olimpíada Brasileira de Estatística</span>
-                <span class="ml-3 sm:hidden">OBE</span>
+                <span class="ml-3 sm:hidden font-extrabold">OBE</span>
             </a>
-            <a href="index.html" class="hidden md:inline-block text-[#002855] font-semibold hover:text-[#0072CE] transition-colors">
-                <i class="fas fa-arrow-left mr-2"></i> Voltar ao Site Principal
+            <a href="index.html" class="hidden md:inline-flex items-center text-sm font-semibold text-dark-blue hover:text-light-blue transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Voltar ao Site Principal
             </a>
         </nav>
     </header>
 
     <main>
-        <section class="relative bg-light-gray pt-32 pb-20 overflow-hidden">
-            <div class="container relative mx-auto px-6 text-center reveal in-view">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-[#002855] leading-tight">
+        <section class="relative bg-slate-50 pt-32 pb-20 md:pt-40 md:pb-24">
+            <div class="container relative mx-auto px-4 sm:px-6 text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark-blue leading-tight">
                     A 1ª Fase Começou!
                 </h1>
-                <p class="mt-6 max-w-4xl mx-auto text-lg text-gray-600">
-                    As inscrições estão encerradas. Agradecemos a participação de todas as escolas e damos início à primeira etapa da nossa jornada. Siga o guia abaixo para realizar o envio das provas.
+                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-slate-600">
+                    As inscrições estão encerradas. Siga o guia abaixo para realizar o envio das provas e garantir a participação de sua escola.
                 </p>
                  <div class="mt-10">
-                    <a href="#guia-fase1" class="bg-gradient-to-r from-[#0072CE] to-[#005c9e] text-white px-10 py-4 rounded-full font-bold text-lg btn-hover">
-                        <i class="fas fa-arrow-down mr-2"></i> Ver Guia de Envio da 1ª Fase
+                    <a href="#guia-fase1" class="bg-gradient-to-r from-light-blue to-dark-blue text-white px-8 py-4 rounded-full font-bold text-lg btn inline-block">
+                        <i class="fas fa-arrow-down mr-2"></i>
+                        Ver Guia de Envio da 1ª Fase
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="guia-fase1" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#002855]">Guia Completo para a 1ª Fase</h2>
-                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Siga atentamente as etapas para garantir o sucesso da participação de sua escola.</p>
+        <section id="guia-fase1" class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-dark-blue">Guia Completo para a 1ª Fase</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Siga atentamente as etapas para o sucesso da participação de sua escola.</p>
                 </div>
                 
-                <div class="max-w-4xl mx-auto bg-gray-50 p-6 md:p-8 rounded-lg card-shadow-lg reveal">
+                <div class="max-w-4xl mx-auto bg-slate-50 p-6 md:p-10 rounded-2xl card-shadow border border-slate-200/80">
                     
-                    <div class="text-center p-6 bg-white rounded-lg border border-gray-200 mb-8">
-                        <h3 class="text-xl font-bold text-[#002855] mb-3">Comece por aqui: Faça o download dos Documentos</h3>
-                        <p class="text-gray-600 mb-6">A leitura completa do regulamento e das instruções de aplicação é fundamental antes de prosseguir.</p>
-                        <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                            <a href="https://drive.google.com/file/d/1TxV2wlZR3u3J8zBA_Br-YxUS0tB064ug/view?usp=sharing" target="_blank" class="w-full sm:w-auto bg-[#002855] text-white px-8 py-3 rounded-full font-bold text-lg btn-hover flex items-center justify-center">
+                    <div class="text-center p-6 bg-white rounded-xl border border-slate-200 mb-10">
+                        <h3 class="text-2xl font-bold text-dark-blue mb-3">Comece por aqui: Documentos Essenciais</h3>
+                        <p class="text-slate-600 mb-6">A leitura completa destes documentos é fundamental antes de prosseguir.</p>
+                        <div class="flex flex-wrap justify-center items-center gap-4">
+                            <a href="https://drive.google.com/file/d/1TxV2wlZR3u3J8zBA_Br-YxUS0tB064ug/view?usp=sharing" target="_blank" class="w-full sm:w-auto bg-dark-blue text-white px-6 py-3 rounded-full font-bold text-base btn flex items-center justify-center">
                                 <i class="fas fa-file-alt mr-2"></i> Regulamento Geral
                             </a>
-                            <a href="https://drive.google.com/file/d/1XDBOJ5hjfLPO-m-lFYMy2kqcRTFcXvNk/view?usp=drive_link" target="_blank" class="w-full sm:w-auto bg-transparent border-2 border-[#002855] text-[#002855] px-8 py-3 rounded-full font-bold text-lg btn-hover flex items-center justify-center">
+                            <a href="https://drive.google.com/file/d/1XDBOJ5hjfLPO-m-lFYMy2kqcRTFcXvNk/view?usp=drive_link" target="_blank" class="w-full sm:w-auto bg-transparent border-2 border-dark-blue text-dark-blue px-6 py-3 rounded-full font-bold text-base btn flex items-center justify-center">
                                 <i class="fas fa-file-download mr-2"></i> Instruções de Aplicação
                             </a>
                         </div>
                     </div>
 
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-bold text-[#002855] border-b-2 border-sky-200 pb-2 mb-4">Período de Aplicação e Envio</h3>
-                        <p class="text-lg text-center font-semibold text-gray-700 bg-sky-100 p-3 rounded-md">De 14 a 21 de setembro de 2025</p>
+                    <div class="mb-10">
+                        <h3 class="text-2xl font-bold text-dark-blue text-center mb-4">Período de Aplicação e Envio</h3>
+                        <p class="text-lg text-center font-semibold text-slate-800 bg-blue-100 p-4 rounded-lg">De 14 a 21 de setembro de 2025</p>
                     </div>
 
                     <div>
-                        <h3 class="text-2xl font-bold text-[#002855] border-b-2 border-sky-200 pb-2 mb-6">Passo a Passo Obrigatório para o Envio Digital</h3>
+                        <h3 class="text-2xl font-bold text-dark-blue text-center border-b-2 border-blue-200 pb-4 mb-8">Passo a Passo Obrigatório para o Envio Digital</h3>
                         
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-[#002855] text-white font-bold text-lg">1</div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-bold text-gray-800">Prepare o Arquivo de Cada Aluno</h4>
-                                    <ul class="list-disc list-inside mt-2 space-y-1 text-gray-600">
-                                        <li>Digitalize ou fotografe a prova com boa iluminação, garantindo que toda a folha esteja visível e legível.</li>
+                        <ol class="space-y-10">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-dark-blue text-white font-bold text-lg shadow">1</div>
+                                <div class="ml-4 flex-1">
+                                    <h4 class="text-lg font-bold text-slate-800">Prepare o Arquivo de Cada Aluno</h4>
+                                    <ul class="list-disc list-inside mt-2 space-y-2 text-slate-600">
+                                        <li>Digitalize ou fotografe a prova com <strong>boa iluminação</strong>, garantindo que toda a folha esteja visível e legível.</li>
                                         <li>Salve o arquivo no formato <strong>JPG</strong> ou <strong>PNG</strong>.</li>
-                                        <li><strong>Regra crucial:</strong> Renomeie o arquivo usando <strong>apenas o número de inscrição</strong> do aluno.
-                                            <br><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Exemplo: Se a inscrição é 12345, o nome do arquivo deve ser `12345.jpg`</span>
+                                        <li><strong class="text-red-600">Regra crucial:</strong> Renomeie o arquivo usando <strong>apenas o número de inscrição</strong> do aluno.
+                                            <br><span class="inline-block mt-1 bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm font-semibold">Exemplo: Se a inscrição é 12345, o nome do arquivo deve ser `12345.jpg`</span>
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-[#002855] text-white font-bold text-lg">2</div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-bold text-gray-800">Envie um E-mail Individual por Prova</h4>
-                                    <p class="text-gray-600 mt-1">Para garantir que nosso sistema automático processe a prova, envie <strong>um e-mail separado para cada aluno</strong>, seguindo o modelo abaixo:</p>
-                                    <div class="mt-3 p-4 bg-white border rounded-md font-mono text-sm text-gray-700">
-                                        <p><strong class="text-gray-900">Para:</strong> <code class="bg-gray-200 px-1 rounded">ob.estatistica@gmail.com</code></p>
-                                        <p class="mt-2"><strong class="text-gray-900">Assunto:</strong> <code class="bg-gray-200 px-1 rounded">[APENAS O NÚMERO DE INSCRIÇÃO DO ALUNO]</code></p>
-                                        <p class="mt-4"><strong class="text-gray-900">Corpo do E-mail:</strong></p>
-                                        <div class="pl-4 border-l-2 mt-1">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-dark-blue text-white font-bold text-lg shadow">2</div>
+                                <div class="ml-4 flex-1">
+                                    <h4 class="text-lg font-bold text-slate-800">Envie um E-mail Individual por Prova</h4>
+                                    <p class="text-slate-600 mt-1">Para o nosso sistema processar a prova, envie <strong>um e-mail separado para cada aluno</strong>, seguindo o modelo:</p>
+                                    <div class="mt-4 p-4 bg-white border rounded-lg font-mono text-sm text-slate-700 leading-relaxed">
+                                        <p><strong class="font-sans text-slate-900">Para:</strong> <code class="bg-slate-200 px-2 py-1 rounded">ob.estatistica@gmail.com</code></p>
+                                        <p class="mt-2"><strong class="font-sans text-slate-900">Assunto:</strong> <code class="bg-slate-200 px-2 py-1 rounded">[APENAS O NÚMERO DE INSCRIÇÃO DO ALUNO]</code></p>
+                                        <div class="mt-4 pt-3 border-t">
+                                            <p class="font-sans font-semibold text-slate-900 mb-2">Corpo do E-mail:</p>
                                             <p>Nome Completo do Aluno: [Nome do Aluno]</p>
                                             <p>Número de Inscrição: [Número de Inscrição]</p>
                                             <p>Nome da Escola: [Nome da Escola]</p>
                                         </div>
-                                        <p class="mt-4"><strong class="text-gray-900">Anexo:</strong> `[Arquivo da prova já renomeado]`</p>
+                                        <p class="mt-4 pt-3 border-t"><strong class="font-sans text-slate-900">Anexo:</strong> `[Arquivo da prova já renomeado]`</p>
                                     </div>
-                                    <p class="mt-4 text-gray-800 font-semibold">Exemplo Visual:</p>
-                                    <img src="https://drive.google.com/uc?id=1FkxejglFvThpWAaJwYXreUOvKxYVlxuj" alt="Exemplo de como o e-mail de envio deve ser formatado" class="mt-2 rounded-lg border-2 border-gray-300 w-full max-w-lg mx-auto">
-                                    <p class="mt-4 text-red-600 font-semibold text-sm"><i class="fas fa-exclamation-triangle mr-1"></i>E-mails com assuntos fora do padrão não serão processados e podem desclassificar o aluno.</p>
+                                    <details class="mt-4">
+                                        <summary class="cursor-pointer text-sm font-semibold text-light-blue hover:underline">Ver exemplo visual do e-mail</summary>
+                                        <img src="https://drive.google.com/uc?id=1FkxejglFvThpWAaJwYXreUOvKxYVlxuj" alt="Exemplo de como o e-mail de envio deve ser formatado" class="mt-2 rounded-lg border-2 border-slate-300 w-full max-w-lg">
+                                    </details>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-success-border text-white font-bold text-lg"><i class="fas fa-check"></i></div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-bold text-gray-800">Checklist Final de Verificação</h4>
-                                     <p class="text-gray-600 mt-1">Antes de enviar, confirme:</p>
-                                    <ul class="list-inside mt-2 space-y-1 text-gray-600">
-                                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>O arquivo de cada prova está renomeado corretamente?</li>
-                                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>O assunto do e-mail contém APENAS o número de inscrição?</li>
-                                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Estou enviando UM e-mail separado para CADA aluno?</li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-green-600 text-white font-bold text-lg shadow"><i class="fas fa-check"></i></div>
+                                <div class="ml-4 flex-1">
+                                    <h4 class="text-lg font-bold text-slate-800">Checklist Final de Verificação</h4>
+                                     <p class="text-slate-600 mt-1">Antes de enviar, confirme se você seguiu estas regras essenciais:</p>
+                                    <ul class="mt-2 space-y-2 text-slate-600">
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span>O arquivo de cada prova está renomeado corretamente?</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span>O assunto do e-mail contém APENAS o número de inscrição?</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span>Estou enviando UM e-mail separado para CADA aluno?</span></li>
                                     </ul>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="acao-final" class="py-20 bg-light-gray">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold text-[#002855]">Tudo Pronto para Enviar?</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-gray-600">Após seguir todas as instruções, clique no botão abaixo para abrir seu programa de e-mail e começar os envios. Lembre-se de enviar um por vez!</p>
-                <div class="mt-8">
-                    <a href="mailto:ob.estatistica@gmail.com" class="bg-gradient-to-r from-[#16a34a] to-[#15803d] text-white px-10 py-4 rounded-full font-bold text-lg btn-hover inline-block">
+        <section id="acao-final" class="py-20 md:py-24 bg-slate-50">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark-blue">Tudo Pronto para Enviar?</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Após seguir todas as instruções, clique no botão abaixo para abrir seu programa de e-mail e começar os envios. Lembre-se de enviar um por vez!</p>
+                <div class="mt-10">
+                    <a href="mailto:ob.estatistica@gmail.com" class="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-full font-bold text-lg btn inline-block shadow-lg">
                         <i class="fas fa-paper-plane mr-2"></i> Começar Envios Agora
                     </a>
                 </div>
@@ -182,63 +182,32 @@
         </section>
     </main>
 
-    <footer class="bg-[#002855] text-white pt-12 pb-8">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
-                <div>
+    <footer class="bg-dark-blue text-white">
+        <div class="container mx-auto px-4 sm:px-6 py-12 md:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+                <div class="md:col-span-1">
                     <h3 class="font-bold text-lg mb-4">Olimpíada Brasileira de Estatística</h3>
-                    <p class="text-white/70">Uma iniciativa para promover o letramento estatístico e o pensamento crítico em jovens de todo o Brasil.</p>
+                    <p class="text-slate-300">Promovendo o letramento estatístico e o pensamento crítico em jovens de todo o Brasil.</p>
                 </div>
                 <div>
                     <h3 class="font-bold text-lg mb-4">Contato</h3>
-                    <ul class="space-y-2 text-white/70">
-                        <li><i class="fas fa-envelope fa-fw mr-2"></i><a href="mailto:diretoria@obe-org.com.br" class="hover:text-sky-300">diretoria@obe-org.com.br</a></li>
-                        <li><i class="fas fa-map-marker-alt fa-fw mr-2"></i>ICMC-USP, São Carlos - SP</li>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex items-center justify-center md:justify-start"><i class="fas fa-envelope fa-fw mr-3"></i><a href="mailto:diretoria@obe-org.com.br" class="hover:text-sky-300 transition-colors">diretoria@obe-org.com.br</a></li>
+                        <li class="flex items-center justify-center md:justify-start"><i class="fas fa-map-marker-alt fa-fw mr-3"></i><span>ICMC-USP, São Carlos - SP</span></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-bold text-lg mb-4">Siga-nos</h3>
-                    <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="https://www.instagram.com/obe.br/" target="_blank" class="text-2xl hover:text-sky-300 transition-colors"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/obe-br/" target="_blank" class="text-2xl hover:text-sky-300 transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <div class="flex justify-center md:justify-start space-x-5">
+                        <a href="https://www.instagram.com/obe.br/" target="_blank" class="text-2xl text-slate-300 hover:text-sky-300 transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/obe-br/" target="_blank" class="text-2xl text-slate-300 hover:text-sky-300 transition-colors"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-white/20 mt-8 pt-6 text-center">
-                <p class="text-sm opacity-80">&copy; 2025 Olimpíada Brasileira de Estatística. Realização: ICMC-USP.</p>
+            <div class="border-t border-slate-700 mt-10 pt-8 text-center text-sm text-slate-400">
+                <p>&copy; 2025 Olimpíada Brasileira de Estatística. Realização: ICMC-USP.</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            const revealElements = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-
-            revealElements.forEach(el => {
-                observer.observe(el);
-            });
-        });
-    </script>
-
 </body>
 </html>
