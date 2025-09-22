@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Olimpíada Brasileira de Estatística (OBE) - USP São Carlos. Promovendo o ensino da estatística e ciência de dados no Brasil.">
+    <title>Curso DATA - Olimpíada Brasileira de Estatística</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #002855;
+            --light-blue: #0072CE;
+            --soft-purple: #6A5ACD;
+            --sky-blue: #87CEEB;
+            --water-green: #40E0D0;
+            --lavender: #CCCCFF;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --black: #000000;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--white);
+            color: var(--black);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(0, 40, 85, 0.9) 0%, rgba(106, 90, 205, 0.8) 100%), 
+                        url('https://cdn-blog.superprof.com/blog_pt/wp-content/uploads/2023/08/curso-estatistica-portugal.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .stat-icon {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .stat-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            color: var(--dark-blue);
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, var(--light-blue) 0%, var(--water-green) 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--light-blue);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .counter {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--light-blue);
+            transition: all 1s ease-out;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 114, 206, 0.1) 0%, rgba(0, 40, 85, 0.1) 100%);
+            border-left: 4px solid var(--light-blue);
+            padding: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-shadow-lg {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 8px rgba(135, 206, 235, 0.3);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        .gradient-border {
+            position: relative;
+        }
+        
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 0.5rem;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--light-blue), var(--water-green));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        
+        .backdrop-blur-sm {
+            backdrop-filter: blur(8px);
+        }
+        
+        .floating {
+            animation: floating 3.5s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(64, 224, 208, 0.3);
+        }
+        
+        .glow-effect:hover {
+            box-shadow: 0 0 25px rgba(64, 224, 208, 0.5);
+        }
+        
+        @keyframes slidesInFromBottom {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .animate-slides-up {
+            animation: slidesInFromBottom 0.8s ease-out forwards;
+        }
+        
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 1s;
+        }
+        
+        .section-show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+
+<body class="scroll-smooth text-black">
+
+    <header class="fixed w-full bg-white/90 shadow-md z-50 backdrop-blur-sm">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html#home" class="text-2xl font-bold text-[#002855] flex items-center">
+                    <img src="https://i.imgur.com/0Tr568p.png" class="h-12" alt="Logo OBE">
+                    <span class="ml-2">OBE</span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#c-python" class="nav-link text-lg font-medium">Python</a>
+                <a href="#c-machinelearning" class="nav-link text-lg font-medium">Machine Learning</a>
+                <a href="#c-sql" class="nav-link text-lg font-medium">SQL</a>
+                <a href="#c-rl" class="nav-link text-lg font-medium">RL</a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-[#002855]">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        
+        <!-- menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 w-full px-4 pb-4 shadow-lg backdrop-blur-sm">
+            <div class="flex flex-col space-y-3">
+                <a href="#c-python" class="nav-link text-lg font-medium py-2">Python</a>
+                <a href="#c-machinelearning" class="nav-link text-lg font-medium py-2">Machine Learning</a>
+                <a href="#c-sql" class="nav-link text-lg font-medium py-2">SQL</a>
+                <a href="#c-rl" class="nav-link text-lg font-medium py-2">RL</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-20 parallax">
+        <div class="container mx-auto px-4 py-20 md:py-32">
+            <div class="max-w-2xl animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight text-white drop-shadow-lg">Cursos DATA</h1>
+                <p class="text-xl md:text-2xl mb-8 font-light text-[#CCCCFF]">USP - São Carlos</p>
+                <p class="text-lg mb-10 leading-relaxed text-white/90">Aqui no DATA, sua jornada no mundo dos dados começa com conteúdos claros, práticos e objetivos: Python, SQL, aprendizado de máquina e RL em um só lugar, pensados para impulsionar seu crescimento.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="c-python" class="py-20 bg-white relative section-hidden">
+
+        <div class="container mx-auto px-4 text-center">
+
+            <h2 class="text-3xl md:text-4xl bg-gradient-to-r from-[#0072CE] to-[#40E0D0] bg-clip-text text-transparent font-bold mb-12 text-center">Curso Python 2025</h2>
+            <p class="text-[#002855]">Domine Python e dê o primeiro passo no mundo dos dados.</p>
+
+            <div class="py-12 bg-white">
+                <div class="container mx-auto px-4">
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        
+                        <!-- Aula 1 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal1')">
+                            Aula 1
+                        </div>
+
+                        <!-- Modal Aula 1-->
+                        <div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal1')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 1</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides, os exercícios e os códigos utilizados em aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/117m6rSit1LI_o_du-NbQeGAozMBH5ikH/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://colab.research.google.com/drive/18Xy8l-PdtG7YSXHWlF4F27Bl_uMeoqh-?usp=sharing#scrollTo=AFSsTsPI--b7" target="_blank">Acessar exercícios</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://colab.research.google.com/drive/1Sju6nUvVHMOYpSwOy287RZ00LaBVoGcR?usp=sharing" target="_blank">Acessar códigos da aula</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 2 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal2')">
+                            Aula 2
+                        </div>
+
+                        <!-- Modal Aula 2-->
+                        <div id="modal2" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal2')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 2</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides, os exercícios e os códigos utilizados em aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://www.canva.com/design/DAGjanjU5bE/Xchm7B3X7biAkkDAxtGOSQ/edit?utm_content=DAGjanjU5bE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://colab.research.google.com/drive/1JiIq2p-PEx54bKocF8UjkWdhnBP-Pcna?usp=sharing" target="_blank">Acessar exercícios</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://colab.research.google.com/drive/1cqOZUxc0563jSsUPYOtKMIptTEsYOinv?usp=sharing" target="_blank">Acessar códigos da aula</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 3 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal3')">
+                            Aula 3
+                        </div>
+
+                        <!-- Modal Aula 3-->
+                        <div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal3')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 3</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://www.canva.com/design/DAGkKiQtQrY/bwVIEtbz3WiCP79yj1C8Ag/edit?utm_content=DAGkKiQtQrY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 4 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal4')">
+                            Aula 4
+                        </div>
+
+                        <!-- Modal Aula 4-->
+                        <div id="modal4" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal4')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 4</h2>
+
+                               <p class="mb-4">Não disponível</p>
+
+                                <!-- <p class="mb-4">Aqui você pode acessar o slidess da aula.</p>
+
+                                <button class="bg-[#002855] text-white px-6 py-3 rounded-full font-bold text-lg hover:bg-[#004080] transition">
+                                <a href="">Acessar slides</a>
+                                </button> -->
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 5 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal5')">
+                            Aula 5
+                        </div>
+
+                        <!-- Modal Aula 5-->
+                        <div id="modal5" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal5')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 5</h2>
+
+                               <p class="mb-4">Não disponível</p>
+
+                                <!-- <p class="mb-4">Aqui você pode acessar o slidess da aula.</p>
+
+                                <button class="bg-[#002855] text-white px-6 py-3 rounded-full font-bold text-lg hover:bg-[#004080] transition">
+                                <a href="">Acessar slides</a>
+                                </button> -->
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 6 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal6')">
+                            Aula 6
+                        </div>
+
+                        <!-- Modal Aula 6-->
+                        <div id="modal6" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal6')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 6</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides, os exercícios e os códigos utilizados em aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://www.canva.com/design/DAGnmnLoUJA/W77CcU0ky4680t-ntad-cw/edit" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://colab.research.google.com/drive/1c8tYcAKxh2JyQz8KKwJ_c6mvXbMqr3g2?usp=sharing" target="_blank">Acessar exercícios</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://colab.research.google.com/drive/1cqOZUxc0563jSsUPYOtKMIptTEsYOinv?usp=sharing" target="_blank">Acessar códigos da aula</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 7 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal7')">
+                            Aula 7
+                        </div>
+
+                        <!-- Modal Aula 7-->
+                        <div id="modal7" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal7')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 7</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://docs.google.com/presentation/d/1AU6HoJ_h8BfnzNC3NwBBZ2Re57Rump5W/edit?usp=sharing&ouid=109384376577480645496&rtpof=true&sd=true" target="_blank">Acessar slidess</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 8 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal8')">
+                            Aula 8
+                        </div>
+
+                        <!-- Modal Aula 8-->
+                        <div id="modal8" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal8')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 8</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://docs.google.com/presentation/d/1KHw-5JebvSbvgJ8P7n0DS7abB58emc1R/edit?usp=sharing&ouid=109384376577480645496&rtpof=true&sd=true" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 9 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal9')">
+                            Aula 9
+                        </div>
+
+                        <!-- Modal Aula 9-->
+                        <div id="modal9" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal9')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 9</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1aY6bzp15v-qPdc8iQqVlRHldgtzxVIHH/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="c-machinelearning" class="py-20 bg-white relative section-hidden">
+
+        <div class="container mx-auto px-4 text-center">
+
+            <h2 class="text-3xl md:text-4xl bg-gradient-to-r from-[#0072CE] to-[#40E0D0] bg-clip-text text-transparent font-bold mb-12 text-center">Curso Machine Learning 2025</h2>
+            <p class="text-[#002855]">Machine Learning descomplicado e prático.</p>
+
+            <div class="py-12 bg-white">
+                <div class="container mx-auto px-4">
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
+
+                        <!-- Aula 1 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal10')">
+                            Aula 1
+                        </div>
+
+                        <!-- Modal Aula 6-->
+                        <div id="modal10" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal10')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 1</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/15fegBsY--zlVKBZorKvgrYYSKvJzXS8F/view?usp=sharing " target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/14vo7CJiukH-xE3nOySZ6JgVb5Vgpo1zS/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        <!-- Aula 2 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal11')">
+                            Aula 2
+                        </div>
+
+                        <!-- Modal Aula 6-->
+                        <div id="modal11" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal11')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 2</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1WhSGBpnK1liIbfIdNViAaCmoEmkYHGNt/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1gyVOZhx1c2wMS2m0_TRSuM6x65koLXGe/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 3 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal12')">
+                            Aula 3
+                        </div>
+
+                        <!-- Modal Aula 6-->
+                        <div id="modal12" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal12')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 3</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1NtZZKog8cQFsC8wx7CNzlwEzHfnw4PjK/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/15cRz-8f6qa6CMBLBipzwz0gWdwNN7iab/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 4 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal13')">
+                            Aula 4
+                        </div>
+
+                        <!-- Modal Aula 4-->
+                        <div id="modal13" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal13')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 4</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/14xxqATqIqIAPkShDiLni-9zwnEDHueAE/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1UA7MdMretQriQZvZiOhmEm472fQMx1Nv/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 5 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal14')">
+                            Aula 5
+                        </div>
+
+                        <!-- Modal Aula 5 -->
+                        <div id="modal14" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal14')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 5</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://docs.google.com/presentation/d/1KVAmvOuirBUQLnp5R0GgCG918D4kslzY/edit?usp=sharing&ouid=109384376577480645496&rtpof=true&sd=true" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/19XI8ebM2WbyKOHDBv3ifOR55QH7PSeB8/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 6 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal15')">
+                            Aula 6
+                        </div>
+
+                        <!-- Modal Aula 6 -->
+                        <div id="modal15" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal15')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 6</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1bmqih3P2M1d5vm2eR3HOyJh_MTq8T9f8/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1L55UzXj67nr6MyRePT_8zSXRBUkC-6Ap/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 7 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal16')">
+                            Aula 7
+                        </div>
+
+                        <!-- Modal Aula 7 -->
+                        <div id="modal16" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal16')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 7</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/13fQ0NzbtJRFq_IjUk3UuPg4zgaRrJlCl/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1KXH2OZc6eXxt5F7-jWJEEYu8isFsJ6W5/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="c-sql" class="py-20 bg-white relative section-hidden">
+
+        <div class="container mx-auto px-4 text-center">
+
+            <h2 class="text-3xl md:text-4xl bg-gradient-to-r from-[#0072CE] to-[#40E0D0] bg-clip-text text-transparent font-bold mb-12 text-center">Curso SQL 2025</h2>
+            <p class="text-[#002855]">SQL: organize, consulte e entenda seus dados.</p>
+
+            <div class="py-12 bg-white">
+                <div class="container mx-auto px-4">
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-6">
+
+                        <!-- Aula 1 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal17')">
+                            Aula 1
+                        </div>
+
+                        <!-- Modal Aula 1-->
+                        <div id="modal17" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal17')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 1</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides, os exercícios da aula e material complementar.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://docs.google.com/presentation/d/10adgpN6SBc3U5KSY1-mm0o_UkGDifQBi/edit?usp=sharing&ouid=109384376577480645496&rtpof=true&sd=true" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1JrQJlPFLXCrP_o9w8zyL8o24xcR4mxdi/view?usp=sharing" target="_blank">Acessar exercícios</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1zHSxcAdWS50tBsgo_4OJ3dL6B21sioM6/view?usp=sharing" target="_blank">Acessar material complementar</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 2 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal18')">
+                            Aula 2
+                        </div>
+
+                        <!-- Modal Aula 2-->
+                        <div id="modal18" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal18')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 2</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides, os exercícios da aula e material complementar.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1RC1VyAvtsp1CUBHrRo7JZ9t_BOz71Gee/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/11o3bnefGQKZ1Y-lgfCZXoWuH3ktHPxsy/view?usp=sharing" target="_blank">Acessar exercícios</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/14gAc-nPYdWjDbUHp8fIL36pkkTPAa6ft/view?usp=sharing" target="_blank">Acessar material complementar</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 3 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal19')">
+                            Aula 3
+                        </div>
+
+                        <!-- Modal Aula 3-->
+                        <div id="modal19" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal19')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 3</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides, os exercícios da aula e material complementar.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/11Rd2jri03bLnC7_UBEmXnFyrXWnYM8Yl/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1g8u7y4yM4M0sCtsuAaencc__sQNe-mtr/view?usp=sharing" target="_blank">Acessar exercícios</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1pXg0j9cCCVCNSTifr8ccslMtBipD23Ja/view?usp=sharing" target="_blank">Acessar material complementar</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="c-rl" class="py-20 bg-white relative section-hidden">
+
+        <div class="container mx-auto px-4 text-center">
+
+            <h2 class="text-3xl md:text-4xl bg-gradient-to-r from-[#0072CE] to-[#40E0D0] bg-clip-text text-transparent font-bold mb-12 text-center">Curso RL 2025</h2>
+            <p class="text-[#002855]">Da teoria ao jogo: explore o poder do RL.</p>
+
+            <div class="py-12 bg-white">
+                <div class="container mx-auto px-4">
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3+. gap-6">
+
+                        <!-- Aula 1 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal20')">
+                            Aula 1
+                        </div>
+
+                        <!-- Modal Aula 1 -->
+                        <div id="modal20" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal20')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 1</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1p4o3WMCvrpEjuUnUW1yiOzzDQqk8Do4F/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1F62Zwh4bsEXhkkq7o--Xu5C-_Jlg0IOT/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 2 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal21')">
+                            Aula 2
+                        </div>
+
+                        <!-- Modal Aula 2 -->
+                        <div id="modal21" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal21')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 2</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1JgIjn4giyVtUFypoXhpJL5Dhhic7Qf4G/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/16s7U3tlMbogYFgtgPDpX9C1DiqzuCyHE/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 3 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal22')">
+                            Aula 3
+                        </div>
+
+                        <!-- Modal Aula 3 -->
+                        <div id="modal22" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal22')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 3</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1-u8IIP7vnvEb1dBHdg6uIXuCK45zJsnb/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1sjtqRox39o1V7-s43ChkhibHwpPQQ1jP/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 4 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal23')">
+                            Aula 4
+                        </div>
+
+                        <!-- Modal Aula 4 -->
+                        <div id="modal23" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal23')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 4</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1pRwg4CUbmQ33yrEL5CL_Go2Wi9FeQTCO/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/12jcR6Un9DHP-mCIT7U13Wxlv65CFiEfH/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Aula 5 -->
+                        <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white rounded-xl h-32 flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition cursor-pointer" onclick="openModal('modal24')">
+                            Aula 5
+                        </div>
+
+                        <!-- Modal Aula 5 -->
+                        <div id="modal24" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative text-black">
+
+                                <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl font-bold" onclick="closeModal('modal24')">
+                                &times;
+                                </button>
+
+                                <h2 class="text-2xl font-bold mb-4 text-[#002855]">Aula 5</h2>
+
+                                <p class="mb-4">Aqui você pode acessar os slides e a apostila da aula.</p>
+
+                                <div class="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1ZHMIOL18yAWvEh_pSOVbRIrlDcQBLq3z/view?usp=sharing" target="_blank">Acessar slides</a>
+                                    </button>
+
+                                    <button class="bg-[#002855] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#004080] transition">
+                                    <a href="https://drive.google.com/file/d/1O79GXQJdGNQGlamK4VUoFxPfCI4Ui30z/view?usp=sharing" target="_blank">Acessar apostila</a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="bg-[#002855] text-white py-10 relative">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="text-2xl font-bold text-white flex items-center">
+                        <img src="https://i.imgur.com/0Tr568p.png" class="h-12" alt="Logo OBE">
+                        <span class="ml-2">OBE</span>
+                    </a>
+                    <p class="mt-2 text-sm opacity-80">Olimpíada Brasileira de Estatística</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <p class="text-sm mb-4 opacity-80">Apoio:</p>
+                    <div class="flex items-center">
+                        <img src="https://web.icmc.usp.br/SCAPINST/identidade_visual/logomarca/NO%20ICMC%20PRETO%20fundo%20transparente.png?Mobile=1&Source=%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3Dbde3e70c%2Da897%2D4e2a%2Dbf3e%2D7f5e9594bebd%26View%3Da7be44e2%2D1aa1%2D40e1%2Daa92%2Db8545c1c68b9%26RootFolder%3D%2FSCAPINST%2Fidentidade%5Fvisual%2Flogomarca%26FolderCTID%3D0x0120005CF1188E1C67B544B10D453367C2C98B%26CurrentPage%3D1" 
+                             alt="ICMC-USP" 
+                             class="h-12">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-8 pt-6 text-center text-sm opacity-80">
+                <p>&copy; 2025 Olimpíada Brasileira de Estatística. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg btn-hover glow-effect hidden"
+            aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+
+        //Open and Close Modal
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for anchor links with offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offset = 80; // Adjust this value to match your header height
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animated counter for impact number
+        function animateCounter(elementId, targetNumber, duration = 2000) {
+            const element = document.getElementById(elementId);
+            const increment = targetNumber / (duration / 16); // 60fps
+            
+            let currentNumber = 0;
+            const interval = setInterval(() => {
+                currentNumber += increment;
+                if (currentNumber >= targetNumber) {
+                    clearInterval(interval);
+                    currentNumber = targetNumber;
+                }
+                element.textContent = Math.floor(currentNumber);
+            }, 16);
+        }
+
+        // Start counter when section is in view
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter('impact-counter', 120);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const projectsSection = document.getElementById('projects');
+        if (projectsSection) {
+            counterObserver.observe(projectsSection);
+        }
+
+        // Scroll animation for sections
+        const sections = document.querySelectorAll('.section-hidden');
+        
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-show');
+                    sectionObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Check if URL has hash and scroll to it on page load
+        window.addEventListener('load', () => {
+            if (window.location.hash) {
+                const targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    const offset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+
+    </script>
+    
+</body>
+
+</html>
