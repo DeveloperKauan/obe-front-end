@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="https://i.imgur.com/0Tr568p.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -218,12 +218,12 @@
                 <a href="#about" class="nav-link text-lg font-medium">Quem Somos</a>
                 <a href="#projects" class="nav-link text-lg font-medium">Nossos Projetos</a>
                 <a href="#olympiad" class="nav-link text-lg font-medium">A Olimpíada</a>
-                <a href="#mission" class="nav-link text-lg font-medium">Missão</a>
+                <a href="#gabarito" class="nav-link text-lg font-medium">Gabarito</a>
                 <a href="#contact" class="nav-link text-lg font-medium">Contato</a>
             </div>
             
-            <a href="#register" class="hidden md:block bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-6 py-2 rounded-full font-medium btn-hover glow-effect">
-                Quero Participar
+            <a href="#gabarito" class="hidden md:block bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-6 py-2 rounded-full font-medium btn-hover glow-effect">
+                Ver Gabarito
             </a>
             
             <button id="mobile-menu-button" class="md:hidden text-[#002855]">
@@ -236,10 +236,10 @@
                 <a href="#about" class="nav-link text-lg font-medium py-2">Quem Somos</a>
                 <a href="#projects" class="nav-link text-lg font-medium py-2">Nossos Projetos</a>
                 <a href="#olympiad" class="nav-link text-lg font-medium py-2">A Olimpíada</a>
-                <a href="#mission" class="nav-link text-lg font-medium py-2">Missão</a>
+                <a href="#gabarito" class="nav-link text-lg font-medium py-2">Gabarito</a>
                 <a href="#contact" class="nav-link text-lg font-medium py-2">Contato</a>
-                <a href="#register" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-6 py-2 rounded-full font-medium text-center btn-hover glow-effect">
-                    Quero Participar
+                <a href="#gabarito" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-6 py-2 rounded-full font-medium text-center btn-hover glow-effect">
+                    Ver Gabarito
                 </a>
             </div>
         </div>
@@ -252,8 +252,8 @@
                 <p class="text-xl md:text-2xl mb-8 font-light text-[#CCCCFF]">USP - São Carlos</p>
                 <p class="text-lg mb-10 leading-relaxed text-white/90">Promovendo o ensino da estatística e ciência de dados para estudantes de todo o Brasil.</p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#register" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-8 py-3 rounded-full font-bold text-center btn-hover glow-effect">
-                        Se inscreva aqui
+                    <a href="#gabarito" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-8 py-3 rounded-full font-bold text-center btn-hover glow-effect">
+                        Gabarito da 1ª Fase
                     </a>
                     <a href="#about" class="bg-white/90 text-[#002855] px-8 py-3 rounded-full font-bold text-center btn-hover border border-[#002855]/20">
                         Saiba mais
@@ -374,6 +374,17 @@
         </div>
     </section>
 
+    <section id="gabarito" class="py-20 bg-slate-100 relative section-hidden">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-4">Gabarito Comentado da 1ª Fase</h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                O período de envio das provas foi encerrado. Agradecemos a participação de todos! Confira o gabarito comentado oficial da primeira fase.
+            </p>
+            <a href="https://drive.google.com/file/d/1thY6DW7A3Gva_f6EngrUqCkmkn2RYLpL/view?usp=sharing" target="_blank" class="bg-gradient-to-r from-[#16a34a] to-[#15803d] text-white px-8 py-4 rounded-full font-bold inline-block btn-hover glow-effect text-lg">
+                <i class="fas fa-file-alt mr-2"></i> Baixar Gabarito Comentado
+            </a>
+        </div>
+    </section>
     <section id="register" class="py-20 bg-gradient-to-br from-[#002855] to-[#0072CE] text-white relative section-hidden">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -400,9 +411,9 @@
                         <i class="fas fa-school text-4xl text-white"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4">Sou uma Escola</h3>
-                    <p class="text-white/90 mb-6 flex-grow">Leve a Olimpíada Brasileira de Estatística para seus alunos e faça parte deste movimento de transformação educacional.</p>
-                    <a href="envio.html" class="bg-white text-[#002855] px-8 py-3 rounded-full font-bold inline-block btn-hover glow-effect mt-auto">
-                        Envio de Provas
+                    <p class="text-white/90 mb-6 flex-grow">Acompanhe os resultados e prepare-se para as próximas edições da Olimpíada Brasileira de Estatística.</p>
+                    <a href="#gabarito" class="bg-white text-[#002855] px-8 py-3 rounded-full font-bold inline-block btn-hover glow-effect mt-auto">
+                        Ver Gabarito da 1ª Fase
                     </a>
                 </div>
             </div>
@@ -573,19 +584,17 @@
 
     <div id="thanks-popup" class="fixed inset-0 bg-black bg-opacity-70 z-[100] flex items-center justify-center p-4 opacity-0 invisible transition-opacity duration-300 ease-in-out">
         <div id="popup-content" class="bg-white rounded-xl max-w-xs sm:max-w-sm w-full mx-auto p-6 shadow-2xl relative transform scale-95 transition-all duration-300 ease-in-out">
-            
             <div class="flex flex-col items-center text-center">
-                <div class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full inline-flex items-center mb-4">
-                    <i class="fas fa-info-circle mr-2"></i>
-                    ATENÇÃO: PRÓXIMA FASE
+                <div class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full inline-flex items-center mb-4">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    GABARITO DISPONÍVEL
                 </div>
-                <h3 class="text-xl font-bold text-[#002855] mb-2">Inscrições Encerradas!</h3>
+                <h3 class="text-xl font-bold text-[#002855] mb-2">Envio de Provas Encerrado!</h3>
                 <p class="text-gray-700 text-sm mb-6">
-                    Agradecemos o interesse. A etapa de <strong>envio de provas</strong> para as escolas inscritas já está aberta.
+                    Confira agora o <strong>gabarito comentado</strong> da 1ª Fase da OBE 2025.
                 </p>
-                
-                <a href="#register" id="popup-redirect-btn" class="w-full bg-gradient-to-r from-[#0072CE] to-[#002855] text-white px-5 py-3 rounded-full font-medium btn-hover text-center">
-                    Acessar Envio de Provas
+                <a href="#gabarito" id="popup-redirect-btn" class="w-full bg-gradient-to-r from-[#0072CE] to-[#002855] text-white px-5 py-3 rounded-full font-medium btn-hover text-center">
+                    Ver Gabarito Agora
                 </a>
             </div>
         </div>
@@ -619,7 +628,6 @@
                 closeThanksPopup();
                 const targetElement = document.querySelector(redirectButton.getAttribute('href'));
                 if (targetElement) {
-                    // Espera o popup fechar para não atrapalhar o scroll
                     setTimeout(() => {
                          const offset = 80;
                          const elementPosition = targetElement.getBoundingClientRect().top;
@@ -678,7 +686,6 @@
         }
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            // Garante que o botão do popup não seja afetado por este listener
             if (anchor.id === 'popup-redirect-btn') return;
 
             anchor.addEventListener('click', function (e) {
