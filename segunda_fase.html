@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -19,59 +19,77 @@
             --sky-blue: #87CEEB;
             --water-green: #40E0D0;
             --white: #FFFFFF;
-            --light-gray: #F5F5F5;
-            --black: #000000;
+            --light-gray: #F7FAFC; /* Slightly different gray */
+            --slate-100: #F1F5F9;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1E293B;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--white);
-            color: var(--black);
+            background-color: var(--light-gray);
+            color: var(--slate-700);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
+
         .btn-hover {
             transition: all 0.3s ease;
             transform: translateY(0);
         }
-        
+
         .btn-hover:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .card-shadow-lg {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
+        .card {
+            background-color: var(--white);
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.07);
+            border: 1px solid #e5e7eb; /* border-gray-200 */
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animation Classes */
         .section-hidden {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease-out;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        
+
         .section-show {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Custom list style */
+        .custom-list li::marker {
+            color: var(--light-blue);
+        }
     </style>
 </head>
 <body class="bg-slate-50">
-    <header class="sticky top-0 w-full bg-white/90 shadow-md z-50 backdrop-blur-sm">
-        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <header class="sticky top-0 w-full bg-white/95 shadow-md z-50 backdrop-blur-lg border-b border-slate-200/80">
+        <nav class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <a href="index.html" class="text-2xl font-bold text-[#002855] flex items-center">
+                <a href="index.html" class="text-2xl font-bold text-dark-blue flex items-center">
                     <img src="https://i.imgur.com/0Tr568p.png" class="h-12" alt="Logo OBE">
-                    <span class="ml-2">OBE</span>
+                    <span class="ml-2 hidden sm:inline">OBE - Segunda Fase</span>
+                     <span class="ml-2 sm:hidden font-extrabold">OBE</span>
                 </a>
             </div>
-            
-             <a href="index.html" class="hidden md:inline-flex items-center text-sm font-semibold text-[#002855] hover:text-[#0072CE] transition-colors">
+
+             <a href="index.html" class="inline-flex items-center text-sm font-semibold text-dark-blue hover:text-light-blue transition-colors bg-slate-100 px-4 py-2 rounded-full border border-slate-300">
                 <i class="fas fa-arrow-left mr-2"></i>
                 Voltar ao Site Principal
             </a>
@@ -80,18 +98,19 @@
 
     <main>
         <section class="relative bg-gradient-to-br from-sky-100 via-blue-200 to-indigo-300 pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
-             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-            <div class="container relative mx-auto px-4 sm:px-6 text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#002855] leading-tight tracking-tight">
-                    Segunda Fase - O Desafio Investigativo!
+             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/lined-paper.png')] opacity-[0.03]"></div>
+            <div class="container relative mx-auto px-4 sm:px-6 text-center section-hidden">
+                <span class="inline-block bg-white/80 text-dark-blue font-semibold px-4 py-1 rounded-full text-sm mb-4 shadow-sm border border-slate-200">Segunda Fase</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark-blue leading-tight tracking-tight">
+                   O Desafio Investigativo!
                 </h1>
                 <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-slate-700">
-                    Parabéns por chegar até aqui! Prepare-se para vivenciar a estatística na prática, assumindo o papel de investigador(a) de dados.
+                    Parabéns classificado(a)! Você está entre os destaques de mais de 7.500 participantes. Agora, prepare-se para vivenciar a estatística na prática.
                 </p>
                  <div class="mt-10">
-                    <a href="#instrucoes" class="bg-gradient-to-r from-[#0072CE] to-[#002855] text-white px-8 py-4 rounded-full font-bold text-lg btn-hover inline-block shadow-lg">
+                    <a href="#o-desafio" class="bg-gradient-to-r from-light-blue to-dark-blue text-white px-8 py-4 rounded-full font-bold text-lg btn-hover inline-block shadow-lg">
                         <i class="fas fa-arrow-down mr-2"></i>
-                        Ver Instruções Completas
+                        Comece por Aqui
                     </a>
                 </div>
             </div>
@@ -99,212 +118,260 @@
 
         <section class="py-16 md:py-20 bg-white section-hidden">
              <div class="container mx-auto px-4 sm:px-6">
-                 <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-8 text-center">Sua Missão: Investigar e Comunicar</h2>
-                 <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-8 text-center">
-                     Nesta fase, você explorará o papel da estatística como ferramenta essencial para compreender o mundo e propor soluções baseadas em evidências. O desafio é construir um projeto completo de investigação estatística, envolvendo:
-                 </p>
-                 <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-700">
-                     <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-[#0072CE] flex items-start gap-3">
-                         <i class="fas fa-users text-[#0072CE] text-xl mt-1"></i>
-                         <span>Trabalho em grupo e diálogo interdisciplinar.</span>
+                 <div class="text-center max-w-3xl mx-auto">
+                      <i class="fas fa-star text-4xl text-amber-400 mb-4"></i>
+                     <h2 class="text-3xl md:text-4xl font-bold text-dark-blue mb-6">Sua Missão: Investigar e Comunicar</h2>
+                     <p class="text-lg text-slate-600 mb-8">
+                         Nesta fase, você explorará o papel da estatística como ferramenta essencial para compreender o mundo e propor soluções baseadas em evidências. Assuma o papel de investigador(a) de dados!
+                     </p>
+                 </div>
+                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-700">
+                     <div class="card p-5 flex items-start gap-4">
+                         <i class="fas fa-users text-light-blue text-2xl mt-1 flex-shrink-0 w-6 text-center"></i>
+                         <p>Trabalho em grupo e diálogo interdisciplinar.</p>
                      </div>
-                      <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-[#0072CE] flex items-start gap-3">
-                         <i class="fas fa-search text-[#0072CE] text-xl mt-1"></i>
-                         <span>Exploração e visualização dos dados para descobrir padrões e tendências.</span>
+                      <div class="card p-5 flex items-start gap-4">
+                         <i class="fas fa-search-plus text-light-blue text-2xl mt-1 flex-shrink-0 w-6 text-center"></i>
+                         <p>Exploração e visualização de dados.</p>
                      </div>
-                      <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-[#0072CE] flex items-start gap-3">
-                         <i class="fas fa-question-circle text-[#0072CE] text-xl mt-1"></i>
-                         <span>Formulação de perguntas e hipóteses relevantes.</span>
+                      <div class="card p-5 flex items-start gap-4">
+                         <i class="fas fa-question-circle text-light-blue text-2xl mt-1 flex-shrink-0 w-6 text-center"></i>
+                         <p>Formulação de perguntas e hipóteses.</p>
                      </div>
-                      <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-[#0072CE] flex items-start gap-3">
-                         <i class="fas fa-shield-alt text-[#0072CE] text-xl mt-1"></i>
-                         <span>Interpretação ética e responsável dos dados.</span>
+                      <div class="card p-5 flex items-start gap-4">
+                         <i class="fas fa-shield-alt text-light-blue text-2xl mt-1 flex-shrink-0 w-6 text-center"></i>
+                         <p>Interpretação ética e responsável.</p>
                      </div>
-                      <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-[#0072CE] flex items-start gap-3 md:col-span-2">
-                         <i class="fas fa-comments text-[#0072CE] text-xl mt-1"></i>
-                         <span>Produção de conclusões significativas e comunicação clara, criativa e acessível.</span>
+                     <div class="card p-5 flex items-start gap-4 lg:col-span-2">
+                         <i class="fas fa-comments text-light-blue text-2xl mt-1 flex-shrink-0 w-6 text-center"></i>
+                         <p>Produção de conclusões significativas e comunicação clara, criativa e acessível.</p>
                      </div>
                  </div>
             </div>
         </section>
 
-        <section class="py-16 md:py-20 bg-slate-100 section-hidden">
+        <section id="o-desafio" class="py-16 md:py-20 bg-light-gray section-hidden">
              <div class="container mx-auto px-4 sm:px-6">
-                  <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-8 text-center">A Situação Problema</h2>
-                  <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-6 text-center">
-                      Muitas vezes, o estatístico colabora com pesquisadores de outras áreas. Considere que você recebeu o seguinte e-mail:
-                  </p>
-                  <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-lg border border-slate-200">
-                        <blockquote class="border-l-4 border-[#6A5ACD] pl-4 italic text-slate-700">
-                            <p class="mb-4">Bom dia, prezado(a) estatístico(a).</p>
-                            <p class="mb-4">Meu nome é Florence Claypon, sou doutora em enfermagem e pesquisadora da área de doenças infecciosas. Tenho trabalhado com doenças tropicais e coletei dados de pacientes com dengue, malária e leptospirose de um hospital no Caribe colombiano (2014-2015). A base de dados está organizada e os dados são coesos.</p>
-                            <p class="mb-4">Gostaria de entender melhor quais fatores estão relacionados a essas doenças, como elas afetam os pacientes e suas características comuns e distintas. Acredito que selecionei muitas características e preciso de ajuda para filtrar o relevante e tirar conclusões significativas.</p>
-                            <p class="mb-4">Sua análise será incluída em um artigo para um público sem grande familiaridade com estatística, então, por favor, considere isso ao produzir seu relatório.</p>
-                            <p>At.te<br>Dra. Florence Claypon.</p>
-                        </blockquote>
-                  </div>
-                  <div class="max-w-3xl mx-auto mt-8 text-slate-600">
-                       <h3 class="text-xl font-semibold text-[#002855] mb-3">Recomendações Iniciais:</h3>
-                       <ul class="list-disc list-inside space-y-2">
-                           <li>Comece explorando a base de dados fornecida.</li>
-                           <li>Pesquise sobre as doenças (dengue, malária, leptospirose) e sobre a região (Caribe colombiano) em fontes confiáveis.</li>
-                           <li>Pesquise sobre tipos de estudos estatísticos para guiar sua análise.</li>
-                           <li>Sinta-se livre para questionar a coleta de dados ou possíveis problemas do estudo. Se fizer suposições, explicite-as claramente no relatório.</li>
-                           <li>Inclua uma breve contextualização do problema no seu relatório (1-2 parágrafos).</li>
-                       </ul>
+                  <h2 class="text-3xl md:text-4xl font-bold text-dark-blue mb-10 text-center">A Situação Problema</h2>
+                  <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                      <div class="lg:col-span-2 card p-6 md:p-8">
+                            <div class="flex items-center mb-4 text-soft-purple">
+                                <i class="fas fa-envelope-open-text text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-semibold ">E-mail Recebido</h3>
+                            </div>
+                            <blockquote class="border-l-4 border-soft-purple pl-4 italic text-slate-700 space-y-4 text-sm md:text-base">
+                                <p>Bom dia, prezado(a) estatístico(a).</p>
+                                <p>Meu nome é Florence Claypon, sou doutora em enfermagem e pesquisadora da área de doenças infecciosas. Tenho trabalhado com doenças tropicais e coletei dados de pacientes com dengue, malária e leptospirose de um hospital no Caribe colombiano (2014-2015). A base de dados está organizada e os dados são coesos.</p>
+                                <p>Gostaria de entender melhor quais fatores estão relacionados a essas doenças, como elas afetam os pacientes e suas características comuns e distintas. Acredito que selecionei muitas características e preciso de ajuda para filtrar o relevante e tirar conclusões significativas.</p>
+                                <p>Sua análise será incluída em um artigo para um público sem grande familiaridade com estatística, então, por favor, considere isso ao produzir seu relatório.</p>
+                                <p>At.te<br>$Dr^{a}$ Florence Claypon.</p>
+                            </blockquote>
+                      </div>
+                       <div class="lg:col-span-1 bg-blue-50 border border-blue-200 rounded-lg p-6 sticky top-24">
+                           <h3 class="text-xl font-semibold text-dark-blue mb-3 flex items-center">
+                               <i class="fas fa-clipboard-list mr-2 text-light-blue"></i>Recomendações
+                           </h3>
+                           <ul class="list-disc list-inside space-y-2 text-sm text-slate-600 custom-list">
+                               <li>Explore a base de dados.</li>
+                               <li>Pesquise sobre as doenças e a região (fontes confiáveis!).</li>
+                               <li>Pesquise sobre tipos de estudos estatísticos.</li>
+                               <li>Questione a coleta (se necessário) e explicite suposições.</li>
+                               <li>Contextualize o problema no relatório (1-2 parágrafos).</li>
+                           </ul>
+                      </div>
                   </div>
              </div>
         </section>
 
-        <section id="instrucoes" class="py-16 md:py-20 bg-white section-hidden">
+        <section id="regras" class="py-16 md:py-20 bg-white section-hidden">
             <div class="container mx-auto px-4 sm:px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-10 text-center">Instruções Essenciais</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
-                    
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="text-2xl font-semibold text-[#002855] mb-4 border-b-2 border-[#0072CE] pb-2 inline-block">Formação dos Grupos</h3>
-                            <ul class="list-disc list-inside space-y-2 text-slate-700">
-                                <li>Grupos de 2 a 5 integrantes (ou individual).</li>
-                                <li>Todos os integrantes da mesma escola (e mesma unidade, se aplicável).</li>
-                                <li>Definam um nome criativo para o grupo!</li>
-                            </ul>
-                        </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-blue mb-10 text-center">Regras Essenciais</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-                        <div>
-                            <h3 class="text-2xl font-semibold text-[#002855] mb-4 border-b-2 border-[#0072CE] pb-2 inline-block">Base de Dados</h3>
-                             <p class="text-slate-700 mb-4">
-                                 A base de dados fornecida pela pesquisadora já foi tratada, você não precisa se preocupar com limpeza inicial. Ela contém diversas variáveis sobre os pacientes. Um dicionário de dados detalhado acompanha a base para consulta.
-                             </p>
-                             <a href="LINK_PARA_BASE_DE_DADOS" target="_blank" class="bg-gradient-to-r from-[#0072CE] to-[#002855] text-white px-6 py-3 rounded-full font-bold inline-block btn-hover text-center">
-                                <i class="fas fa-database mr-2"></i> Baixar Base de Dados (e Dicionário)
-                            </a>
-                             <p class="text-xs text-slate-500 mt-2">(Substitua `LINK_PARA_BASE_DE_DADOS` pelo link real)</p>
-                        </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-semibold text-dark-blue mb-3 flex items-center">
+                           <i class="fas fa-users mr-2 text-light-blue"></i> Formação dos Grupos
+                        </h3>
+                        <ul class="list-disc list-inside space-y-1 text-sm text-slate-600 custom-list">
+                            <li>Grupos de 2 a 5 integrantes (ou individual).</li>
+                            <li>Todos da mesma escola/unidade.</li>
+                            <li>Definam um nome criativo!</li>
+                        </ul>
                     </div>
 
-                    <div class="space-y-8">
-                         <div>
-                            <h3 class="text-2xl font-semibold text-[#002855] mb-4 border-b-2 border-[#0072CE] pb-2 inline-block">Entrega do Relatório Final</h3>
-                            <ul class="list-disc list-inside space-y-3 text-slate-700">
-                                <li><strong>Prazo Final:</strong> <span class="font-bold text-red-600">17 de Novembro de 2025</span></li>
-                                <li><strong>Formato:</strong> Exclusivamente PDF.</li>
-                                <li><strong>Envio:</strong> A escola deve enviar um único e-mail contendo os relatórios de todos os seus grupos.</li>
-                                <li><strong>Destinatário:</strong> <code class="bg-slate-200 px-1 rounded text-sm">ob.estatistica@gmail.com</code></li>
-                                <li><strong>Assunto do E-mail:</strong> <code class="bg-slate-200 px-1 rounded text-sm">Relatório Segunda Fase</code></li>
-                                <li><strong>Corpo do E-mail:</strong> Deve conter nome da escola, professor responsável, e para cada grupo: nome dos alunos e seus códigos de identificação (os mesmos da 1ª fase).</li>
-                            </ul>
-                        </div>
-                         <div>
-                            <h3 class="text-2xl font-semibold text-[#002855] mb-4 border-b-2 border-[#0072CE] pb-2 inline-block">Regulamento</h3>
-                             <p class="text-slate-700 mb-4">
-                                 Consulte o regulamento geral da OBE para informações adicionais sobre as regras e critérios de avaliação.
-                             </p>
-                             <a href="https://drive.google.com/file/d/1TxV2wlZR3u3J8zBA_Br-YxUS0tB064ug/view?usp=sharing" target="_blank" class="bg-slate-200 text-[#002855] px-6 py-3 rounded-full font-bold inline-block btn-hover text-center border border-slate-300">
-                                <i class="fas fa-file-alt mr-2"></i> Acessar Regulamento Geral
-                            </a>
-                        </div>
+                     <div class="card p-6">
+                        <h3 class="text-xl font-semibold text-dark-blue mb-3 flex items-center">
+                           <i class="fas fa-calendar-alt mr-2 text-light-blue"></i> Prazo Final
+                        </h3>
+                         <p class="font-bold text-lg text-red-600 mb-2">17 de Novembro de 2025</p>
+                         <p class="text-sm text-slate-600">Envios após esta data não serão considerados.</p>
                     </div>
 
+                    <div class="card p-6">
+                        <h3 class="text-xl font-semibold text-dark-blue mb-3 flex items-center">
+                           <i class="fas fa-file-pdf mr-2 text-light-blue"></i> Formato do Relatório
+                        </h3>
+                         <p class="text-slate-600 text-sm">O relatório final deve ser enviado <strong class="text-red-600">exclusivamente em formato PDF</strong>.</p>
+                    </div>
+
+                    <div class="card p-6 lg:col-span-3">
+                         <h3 class="text-xl font-semibold text-dark-blue mb-4 flex items-center">
+                           <i class="fas fa-paper-plane mr-2 text-light-blue"></i> Instruções de Envio por E-mail
+                        </h3>
+                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                             <div>
+                                <p class="font-semibold mb-1">Responsabilidade:</p>
+                                <p class="text-slate-600">A <strong class="text-slate-800">escola</strong> deve enviar um único e-mail com os relatórios de todos os seus grupos.</p>
+                             </div>
+                              <div>
+                                <p class="font-semibold mb-1">Destinatário:</p>
+                                <p class="text-slate-600"><code class="bg-slate-200 px-1 rounded">ob.estatistica@gmail.com</code></p>
+                             </div>
+                             <div>
+                                <p class="font-semibold mb-1">Assunto:</p>
+                                <p class="text-slate-600"><code class="bg-slate-200 px-1 rounded">Relatório Segunda Fase</code></p>
+                             </div>
+                              <div>
+                                <p class="font-semibold mb-1">Corpo do E-mail:</p>
+                                <p class="text-slate-600">Incluir nome da escola, professor responsável, e para cada grupo: nome dos alunos e códigos de identificação.</p>
+                             </div>
+                         </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-         <section class="py-16 md:py-20 bg-slate-100 section-hidden">
+
+         <section class="py-16 md:py-20 bg-light-gray section-hidden">
              <div class="container mx-auto px-4 sm:px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-10 text-center">Estrutura e Formatação do Relatório</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    
-                    <div class="bg-white p-6 rounded-lg shadow border border-slate-200">
-                         <h3 class="text-xl font-semibold text-[#002855] mb-3">Capa Obrigatória</h3>
-                         <ul class="list-disc list-inside space-y-1 text-slate-700">
-                             <li>Título adequado para o relatório.</li>
-                             <li>Nome completo dos integrantes.</li>
-                             <li>Número de identificação (1ª fase) de cada integrante.</li>
-                             <li>Nome do professor responsável.</li>
-                             <li>Nome da escola.</li>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-blue mb-10 text-center">Construindo seu Relatório</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+                    <div class="card p-6">
+                         <h3 class="text-xl font-semibold text-dark-blue mb-3 flex items-center">
+                             <i class="fas fa-file-signature mr-2 text-light-blue"></i> Capa Obrigatória
+                         </h3>
+                         <ul class="list-disc list-inside space-y-1 text-sm text-slate-600 custom-list">
+                             <li>Título</li>
+                             <li>Nomes dos integrantes</li>
+                             <li>Códigos de identificação</li>
+                             <li>Professor responsável</li>
+                             <li>Nome da escola</li>
                          </ul>
                     </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow border border-slate-200">
-                         <h3 class="text-xl font-semibold text-[#002855] mb-3">Seções Mínimas</h3>
-                         <ul class="list-disc list-inside space-y-1 text-slate-700">
-                             <li>Contextualização do problema.</li>
-                             <li>Análise Descritiva.</li>
-                             <li>Análise Inferencial.</li>
-                             <li>Bibliografia (com todas as fontes consultadas).</li>
+                    <div class="card p-6">
+                         <h3 class="text-xl font-semibold text-dark-blue mb-3 flex items-center">
+                            <i class="fas fa-stream mr-2 text-light-blue"></i> Seções Mínimas
+                         </h3>
+                         <ul class="list-disc list-inside space-y-1 text-sm text-slate-600 custom-list">
+                             <li>Contextualização</li>
+                             <li>Análise Descritiva</li>
+                             <li>Análise Inferencial</li>
+                             <li>Bibliografia</li>
                          </ul>
-                         <p class="text-sm text-slate-500 mt-2">Sinta-se livre para adicionar mais seções/subseções para melhor organização.</p>
+                         <p class="text-xs text-slate-500 mt-2">Adicione subseções se necessário.</p>
                     </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow border border-slate-200 md:col-span-2">
-                        <h3 class="text-xl font-semibold text-[#002855] mb-3">Dicas de Formatação e Qualidade</h3>
-                         <ul class="list-disc list-inside space-y-2 text-slate-700">
-                             <li>Organize bem o conteúdo para facilitar a leitura.</li>
-                             <li>Revise a gramática cuidadosamente.</li>
-                             <li>Mantenha consistência estética nos gráficos (cores, estilos). Preste atenção ao contraste.</li>
-                             <li>Não copie e cole saídas de software diretamente; apresente as informações em texto ou tabelas comentadas.</li>
-                             <li>Justifique todas as informações, gráficos e tabelas incluídas.</li>
-                              <li>Interprete, comente e explique cada elemento visual ou medida resumo.</li>
+                     <div class="card p-6">
+                        <h3 class="text-xl font-semibold text-dark-blue mb-3 flex items-center">
+                            <i class="fas fa-check-double mr-2 text-light-blue"></i> Dicas de Qualidade
+                        </h3>
+                         <ul class="list-disc list-inside space-y-1 text-sm text-slate-600 custom-list">
+                             <li>Organização clara</li>
+                             <li>Revisão gramatical</li>
+                             <li>Consistência visual (gráficos!)</li>
+                             <li>Justificativas para tudo</li>
+                              <li>Interpretação e comentários</li>
                          </ul>
                     </div>
-
                 </div>
              </div>
         </section>
 
         <section class="py-16 md:py-20 bg-white section-hidden">
              <div class="container mx-auto px-4 sm:px-6">
-                 <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-10 text-center">Orientações para Análise</h2>
+                 <h2 class="text-3xl md:text-4xl font-bold text-dark-blue mb-10 text-center">Orientações para Análise</h2>
                  <div class="max-w-4xl mx-auto space-y-10">
-                    
-                    <div>
-                        <h3 class="text-2xl font-semibold text-[#002855] mb-4"><i class="fas fa-chart-bar mr-2 text-[#0072CE]"></i>Análise Descritiva (Grande Enfoque!)</h3>
-                        <p class="text-slate-700 mb-4">Esta é uma parte crucial (pelo menos 50% da análise, segundo alguns estatísticos!). Permite ter uma boa noção das conclusões antes de usar técnicas complexas.</p>
-                        <ul class="list-disc list-inside space-y-2 text-slate-700">
-                            <li>Inclua gráficos e tabelas que julgar necessários, mas sem excesso. Justifique cada inclusão.</li>
-                            <li>Interprete e explique cada gráfico, tabela ou medida.</li>
-                            <li>Pense em como agrupar gráficos (ex: vários boxplots juntos) e use escalas consistentes para comparação.</li>
-                            <li>Capriche na estética e consistência visual.</li>
+
+                    <div class="card p-6 md:p-8 border-l-4 border-water-green">
+                        <h3 class="text-2xl font-semibold text-dark-blue mb-4 flex items-center">
+                            <i class="fas fa-chart-pie mr-3 text-water-green"></i> Análise Descritiva (Grande Enfoque!)
+                        </h3>
+                        <p class="text-slate-700 mb-4">Esta é a parte mais importante! Dedique atenção para extrair insights iniciais dos dados.</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 custom-list">
+                            <li>Use gráficos e tabelas <strong class="text-slate-800">com propósito</strong>, sem excesso.</li>
+                            <li><strong class="text-slate-800">Interprete TUDO:</strong> explique o que cada gráfico/tabela mostra.</li>
+                            <li>Agrupe gráficos e use escalas consistentes para facilitar comparações.</li>
+                            <li>Capriche na estética e clareza visual.</li>
                         </ul>
                     </div>
 
-                     <div>
-                        <h3 class="text-2xl font-semibold text-[#002855] mb-4"><i class="fas fa-lightbulb mr-2 text-[#0072CE]"></i>Análise Inferencial (Extrapolando Conclusões)</h3>
-                        <p class="text-slate-700 mb-4">Aqui você vai além dos dados observados, extrapolando conclusões para uma população maior.</p>
-                        <ul class="list-disc list-inside space-y-2 text-slate-700">
-                             <li>Justifique cuidadosamente todas as afirmações com base nas tendências da análise descritiva.</li>
-                             <li>Use a criatividade, pois sabemos que vocês podem não ter familiaridade com todas as ferramentas formais.</li>
-                             <li><strong class="text-red-600">Muita atenção ao formular conclusões!</strong> Evite generalizações excessivas, considere o tamanho da amostra e a forma de coleta dos dados. Seja preciso e cauteloso.</li>
+                     <div class="card p-6 md:p-8 border-l-4 border-soft-purple">
+                        <h3 class="text-2xl font-semibold text-dark-blue mb-4 flex items-center">
+                            <i class="fas fa-project-diagram mr-3 text-soft-purple"></i> Análise Inferencial (Extrapolando)
+                        </h3>
+                        <p class="text-slate-700 mb-4">Vá além dos dados observados, mas com cautela e justificativa.</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 custom-list">
+                             <li>Baseie <strong class="text-slate-800">todas</strong> as afirmações nas tendências da análise descritiva.</li>
+                             <li>Use a criatividade para apresentar suas conclusões.</li>
+                             <li><strong class="text-red-600">Cuidado ao generalizar!</strong> Seja preciso, considere a amostra e evite afirmações muito fortes ou perigosas.</li>
                         </ul>
                     </div>
                  </div>
             </div>
         </section>
 
+         <section id="recursos" class="py-16 md:py-20 bg-light-gray section-hidden">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-dark-blue mb-6">Recursos Essenciais</h2>
+                 <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10">
+                     Acesse os documentos fundamentais para realizar o desafio da Segunda Fase.
+                 </p>
+                  <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6">
+                       <a href="https://drive.google.com/file/d/1vEXdiTCFkEUySHiAcnh_eytRAh7Lm27N/view" target="_blank" class="bg-gradient-to-r from-red-500 to-red-700 text-white px-8 py-4 rounded-full font-bold inline-flex items-center btn-hover text-center text-lg shadow-lg order-1">
+                          <i class="fas fa-file-pdf mr-2"></i> Instruções Completas (PDF)
+                      </a>
+                      <a href="https://docs.google.com/spreadsheets/d/1sVfA8aNPw0bauZwgWbxfiq1XimsVc2Upgu39QHajFk0/edit?usp=sharing" target="_blank" class="bg-gradient-to-r from-light-blue to-dark-blue text-white px-8 py-4 rounded-full font-bold inline-flex items-center btn-hover text-center text-lg shadow-lg order-2">
+                          <i class="fas fa-file-excel mr-2"></i> Baixar Base de Dados (.xlsx)
+                      </a>
+                       <a href="OBE 2025 DataBase.csv" download="OBE 2025 DataBase.csv" class="bg-gradient-to-r from-green-500 to-teal-500 text-white px-8 py-4 rounded-full font-bold inline-flex items-center btn-hover text-center text-lg shadow-lg order-3">
+                          <i class="fas fa-file-csv mr-2"></i> Baixar Base de Dados (.csv)
+                      </a>
+                      <a href="https://drive.google.com/file/d/1TxV2wlZR3u3J8zBA_Br-YxUS0tB064ug/view?usp=sharing" target="_blank" class="bg-white text-dark-blue px-8 py-4 rounded-full font-bold inline-flex items-center btn-hover text-center text-lg border-2 border-dark-blue shadow order-4">
+                          <i class="fas fa-book mr-2"></i> Consultar Regulamento
+                      </a>
+                  </div>
+                  <p class="text-sm font-medium text-red-600 mt-6"><i class="fas fa-exclamation-triangle mr-1"></i> A leitura do PDF de Instruções Completas é obrigatória (contém o dicionário de dados)!</p>
+
+            </div>
+        </section>
+
+
          <section class="bg-gradient-to-br from-[#002855] to-[#001a35] section-hidden">
             <div class="container mx-auto px-4 sm:px-6 py-16 md:py-20 text-center text-white">
+                 <i class="fas fa-rocket text-4xl text-sky-300 mb-6"></i>
                 <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Bom Trabalho!</h2>
                 <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-300">
-                    Estas são as instruções para a segunda fase. Dediquem-se à análise, sejam criativos e apresentem um relatório claro e bem fundamentado. Estamos ansiosos para ver suas descobertas!
+                    Dediquem-se à análise, sejam criativos e apresentem um relatório claro e bem fundamentado. Estamos ansiosos para ver suas descobertas!
                 </p>
             </div>
         </section>
 
     </main>
 
-     <footer class="bg-[#002855] text-white border-t-4 border-[#0072CE]">
+     <footer class="bg-dark-blue text-white border-t-4 border-light-blue">
         <div class="container mx-auto px-4 sm:px-6 py-12 md:py-16">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
                 <div class="md:col-span-1">
                     <h3 class="font-bold text-lg mb-4 text-white">Olimpíada Brasileira de Estatística</h3>
-                    <p class="text-slate-300">Promovendo o letramento estatístico e o pensamento crítico em jovens de todo o Brasil.</p>
+                    <p class="text-slate-300 text-sm">Promovendo o letramento estatístico e o pensamento crítico em jovens de todo o Brasil.</p>
                 </div>
                 <div>
                     <h3 class="font-bold text-lg mb-4 text-white">Contato</h3>
-                    <ul class="space-y-3 text-slate-300">
-                        <li class="flex items-center justify-center md:justify-start"><i class="fas fa-envelope fa-fw mr-3"></i><a href="mailto:diretoria@obe-org.com.br" class="hover:text-sky-300 transition-colors">diretoria@obe-org.com.br</a></li>
-                        <li class="flex items-center justify-center md:justify-start"><i class="fas fa-map-marker-alt fa-fw mr-3"></i><span>ICMC-USP, São Carlos - SP</span></li>
+                    <ul class="space-y-3 text-slate-300 text-sm">
+                        <li class="flex items-center justify-center md:justify-start"><i class="fas fa-envelope fa-fw mr-3 text-sky-300"></i><a href="mailto:diretoria@obe-org.com.br" class="hover:text-sky-300 transition-colors">diretoria@obe-org.com.br</a></li>
+                        <li class="flex items-center justify-center md:justify-start"><i class="fas fa-map-marker-alt fa-fw mr-3 text-sky-300"></i><span>ICMC-USP, São Carlos - SP</span></li>
                     </ul>
                 </div>
                 <div>
@@ -322,42 +389,49 @@
     </footer>
 
     <script>
-        // Animação de entrada das seções
-        const sections = document.querySelectorAll('.section-hidden');
-        if(sections.length > 0) {
-            const sectionObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('section-show');
-                        observer.unobserve(entry.target);
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animation Observer
+            const sections = document.querySelectorAll('.section-hidden');
+            if(sections.length > 0) {
+                const sectionObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        const delay = entry.target.dataset.delay || 0;
+                        if (entry.isIntersecting) {
+                             setTimeout(() => { // Add delay if needed
+                                entry.target.classList.add('section-show');
+                             }, parseInt(delay)); // Ensure delay is an integer
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                sections.forEach((section, index) => {
+                     // Stagger animation slightly
+                     section.dataset.delay = index * 50; // Add 50ms delay between sections
+                    sectionObserver.observe(section);
+                });
+            }
+
+            // Smooth Scroll
+             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                     const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offset = 80; // Header height
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
                     }
                 });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px' // Adjust rootMargin if needed
-            });
-
-            sections.forEach(section => {
-                sectionObserver.observe(section);
-            });
-        }
-
-         // Scroll suave para links internos
-         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                 const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const offset = 80; // Altura do header
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
             });
         });
     </script>
