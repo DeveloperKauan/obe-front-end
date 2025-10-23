@@ -23,38 +23,38 @@
             --light-gray: #F5F5F5;
             --black: #000000;
         }
-        
+
         body {
             font-family: 'Montserrat', sans-serif;
             scroll-behavior: smooth;
             background-color: var(--white);
             color: var(--black);
         }
-        
+
         .hero-bg {
-            background: linear-gradient(135deg, rgba(0, 40, 85, 0.9) 0%, rgba(106, 90, 205, 0.8) 100%), 
+            background: linear-gradient(135deg, rgba(0, 40, 85, 0.9) 0%, rgba(106, 90, 205, 0.8) 100%),
                         url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        
+
         .stat-icon {
             transition: all 0.3s ease;
             transform: translateY(0);
         }
-        
+
         .stat-icon:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         .nav-link {
             position: relative;
             color: var(--dark-blue);
             transition: color 0.3s ease;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -65,26 +65,26 @@
             background: linear-gradient(90deg, var(--light-blue) 0%, var(--water-green) 100%);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover {
             color: var(--light-blue);
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .btn-hover {
             transition: all 0.3s ease;
             transform: translateY(0);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
+
         .btn-hover:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .counter {
             font-size: 4rem;
             font-weight: 700;
@@ -92,26 +92,26 @@
             transition: all 1s ease-out;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+
         .highlight-box {
             background: linear-gradient(135deg, rgba(0, 114, 206, 0.1) 0%, rgba(0, 40, 85, 0.1) 100%);
             border-left: 4px solid var(--light-blue);
             padding: 2rem;
             border-radius: 0 8px 8px 0;
         }
-        
+
         .card-shadow {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         .card-shadow-lg {
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
-        
+
         .text-glow {
             text-shadow: 0 0 8px rgba(135, 206, 235, 0.3);
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -122,15 +122,15 @@
                 transform: translateY(0);
             }
         }
-        
+
         .animate-fade-in-up {
             animation: fadeInUp 1s ease-out forwards;
         }
-        
+
         .gradient-border {
             position: relative;
         }
-        
+
         .gradient-border::before {
             content: '';
             position: absolute;
@@ -143,36 +143,36 @@
             mask-composite: exclude;
             pointer-events: none;
         }
-        
+
         .backdrop-blur-sm {
             backdrop-filter: blur(8px);
         }
-        
+
         .floating {
             animation: floating 3.5s ease-in-out infinite;
         }
-        
+
         @keyframes floating {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
-        
+
         .parallax {
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
-        
+
         .glow-effect {
             box-shadow: 0 0 15px rgba(64, 224, 208, 0.3);
         }
-        
+
         .glow-effect:hover {
             box-shadow: 0 0 25px rgba(64, 224, 208, 0.5);
         }
-        
+
         @keyframes slideInFromBottom {
             0% {
                 transform: translateY(100px);
@@ -183,22 +183,22 @@
                 opacity: 1;
             }
         }
-        
+
         .animate-slide-up {
             animation: slideInFromBottom 0.8s ease-out forwards;
         }
-        
+
         .section-hidden {
             opacity: 0;
             transform: translateY(100px);
             transition: all 1s;
         }
-        
+
         .section-show {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
@@ -213,33 +213,33 @@
                     <span class="ml-2">OBE</span>
                 </a>
             </div>
-            
+
             <div class="hidden md:flex space-x-8">
                 <a href="#about" class="nav-link text-lg font-medium">Quem Somos</a>
                 <a href="#projects" class="nav-link text-lg font-medium">Nossos Projetos</a>
                 <a href="#olympiad" class="nav-link text-lg font-medium">A Olimpíada</a>
-                <a href="#resultados" class="nav-link text-lg font-medium">Resultados</a>
+                <a href="segunda_fase.html" class="nav-link text-lg font-medium">Segunda Fase</a>
                 <a href="#contact" class="nav-link text-lg font-medium">Contato</a>
             </div>
-            
-            <a href="#resultados" class="hidden md:block bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-6 py-2 rounded-full font-medium btn-hover glow-effect">
-                Ver Resultados
+
+            <a href="segunda_fase.html" class="hidden md:block bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-6 py-2 rounded-full font-medium btn-hover glow-effect">
+                Segunda Fase Começou!
             </a>
-            
+
             <button id="mobile-menu-button" class="md:hidden text-[#002855]">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </nav>
-        
+
         <div id="mobile-menu" class="hidden md:hidden bg-white/95 w-full px-4 pb-4 shadow-lg backdrop-blur-sm">
             <div class="flex flex-col space-y-3">
                 <a href="#about" class="nav-link text-lg font-medium py-2">Quem Somos</a>
                 <a href="#projects" class="nav-link text-lg font-medium py-2">Nossos Projetos</a>
                 <a href="#olympiad" class="nav-link text-lg font-medium py-2">A Olimpíada</a>
-                <a href="#resultados" class="nav-link text-lg font-medium py-2">Resultados</a>
+                <a href="segunda_fase.html" class="nav-link text-lg font-medium py-2">Segunda Fase</a>
                 <a href="#contact" class="nav-link text-lg font-medium py-2">Contato</a>
-                <a href="#resultados" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-6 py-2 rounded-full font-medium text-center btn-hover glow-effect">
-                    Ver Resultados
+                <a href="segunda_fase.html" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-6 py-2 rounded-full font-medium text-center btn-hover glow-effect">
+                    Segunda Fase Começou!
                 </a>
             </div>
         </div>
@@ -252,8 +252,8 @@
                 <p class="text-xl md:text-2xl mb-8 font-light text-[#CCCCFF]">USP - São Carlos</p>
                 <p class="text-lg mb-10 leading-relaxed text-white/90">Promovendo o ensino da estatística e ciência de dados para estudantes de todo o Brasil.</p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#resultados" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-8 py-3 rounded-full font-bold text-center btn-hover glow-effect">
-                        Resultados da 1ª Fase
+                    <a href="segunda_fase.html" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-8 py-3 rounded-full font-bold text-center btn-hover glow-effect">
+                       Segunda Fase Começou!
                     </a>
                     <a href="#about" class="bg-white/90 text-[#002855] px-8 py-3 rounded-full font-bold text-center btn-hover border border-[#002855]/20">
                         Saiba mais
@@ -266,7 +266,7 @@
     <section id="about" class="py-20 bg-white relative section-hidden">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">Quem Somos</h2>
-            
+
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
                     <p class="text-lg mb-6 leading-relaxed text-[#002855]">A Olimpíada Brasileira de Estatística (OBE) é uma iniciativa educacional que acredita no poder transformador da Estatística para a sociedade.</p>
@@ -274,8 +274,8 @@
                     <p class="text-lg leading-relaxed text-[#002855]">Mais do que uma competição, a OBE é um movimento: promovemos a autonomia intelectual, o trabalho em equipe, a inclusão e a criatividade, formando jovens preparados para entender o mundo de forma ética e analítica.</p>
                 </div>
                 <div class="lg:w-1/2 floating">
-                    <img src="https://i.imgur.com/0Tr568p.png" 
-                             alt="Equipe da OBE" 
+                    <img src="https://i.imgur.com/0Tr568p.png"
+                             alt="Equipe da OBE"
                              class="w-full max-w-md mx-auto">
                 </div>
             </div>
@@ -345,7 +345,7 @@
     <section id="olympiad" class="py-20 bg-white relative section-hidden">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">A Olimpíada</h2>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-xl stat-icon card-shadow border border-[#002855]/10">
                     <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
@@ -354,7 +354,7 @@
                     <h3 class="text-xl font-bold text-[#002855] mb-4 text-center">Propósito</h3>
                     <p class="text-center text-[#555]">Estimular o interesse pela Estatística entre estudantes do ensino fundamental e médio, desenvolvendo habilidades analíticas e de interpretação de dados.</p>
                 </div>
-                
+
                 <div class="bg-white p-8 rounded-xl stat-icon card-shadow border border-[#002855]/10">
                     <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-universal-access text-2xl"></i>
@@ -362,7 +362,7 @@
                     <h3 class="text-xl font-bold text-[#002855] mb-4 text-center">Democratização</h3>
                     <p class="text-center text-[#555]">A OBE é totalmente gratuita e acessível a estudantes de escolas públicas e particulares de todo o Brasil, promovendo igualdade de oportunidades.</p>
                 </div>
-                
+
                 <div class="bg-white p-8 rounded-xl stat-icon card-shadow border border-[#002855]/10">
                     <div class="bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-lightbulb text-2xl"></i>
@@ -374,14 +374,14 @@
         </div>
     </section>
 
-    <section id="resultados" class="py-20 bg-slate-100 relative section-hidden">
+     <section id="resultados" class="py-20 bg-slate-100 relative section-hidden">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-4">Resultados da 1ª Fase</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-4">Materiais da 1ª Fase</h2>
             <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10">
-                A primeira fase foi concluída! Confira a lista de classificados, a prova oficial e o gabarito comentado.
+                Acesse a lista de classificados, a prova oficial e o gabarito comentado da primeira fase.
             </p>
             <div class="flex flex-wrap justify-center items-center gap-4">
-                <a href="https://drive.google.com/file/d/1UjQVATFnb6a3PTMlcwtROOY6BBuv6qLD/view?usp=sharing" target="_blank" class="bg-gradient-to-r from-amber-500 to-yellow-500 text-white px-8 py-4 rounded-full font-bold inline-block btn-hover glow-effect text-lg">
+                <a href="https://drive.google.com/file/d/1TxV2wlZR3u3J8zBA_Br-YxUS0tB064ug/view?usp=sharing" target="_blank" class="bg-gradient-to-r from-amber-500 to-yellow-500 text-white px-8 py-4 rounded-full font-bold inline-block btn-hover glow-effect text-lg">
                     <i class="fas fa-trophy mr-2"></i> Ver Classificados
                 </a>
                 <a href="https://drive.google.com/file/d/1ercVldBjDDu41UpygEI9cwukDtWOr7pm/view?usp=sharing" target="_blank" class="bg-gradient-to-r from-[#0072CE] to-[#002855] text-white px-8 py-4 rounded-full font-bold inline-block btn-hover glow-effect text-lg">
@@ -419,9 +419,9 @@
                         <i class="fas fa-school text-4xl text-white"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4">Sou uma Escola</h3>
-                    <p class="text-white/90 mb-6 flex-grow">Acompanhe os resultados e prepare-se para as próximas edições da Olimpíada Brasileira de Estatística.</p>
-                    <a href="#resultados" class="bg-white text-[#002855] px-8 py-3 rounded-full font-bold inline-block btn-hover glow-effect mt-auto">
-                        Ver Resultados da 1ª Fase
+                    <p class="text-white/90 mb-6 flex-grow">A Segunda Fase já começou! Clique abaixo para acessar as instruções e materiais necessários.</p>
+                    <a href="segunda_fase.html" class="bg-white text-[#002855] px-8 py-3 rounded-full font-bold inline-block btn-hover glow-effect mt-auto">
+                        Acessar Segunda Fase
                     </a>
                 </div>
             </div>
@@ -431,7 +431,7 @@
     <section id="mission" class="py-20 bg-[#0072CE] text-white relative section-hidden">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center drop-shadow-lg">Missão, Visão e Valores</h2>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white/20 p-8 rounded-xl card-shadow backdrop-blur-sm border border-white/30">
                     <div class="bg-gradient-to-br from-[#002855] to-[#6A5ACD] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
@@ -440,7 +440,7 @@
                     <h3 class="text-xl font-bold text-white mb-4 text-center">Missão</h3>
                     <p class="text-center text-white/90">Fomentar uma educação que vá além do conhecimento técnico, contribuindo para a formação de cidadãos responsáveis, éticos e comprometidos com a construção de uma sociedade mais justa.</p>
                 </div>
-                
+
                 <div class="bg-white/20 p-8 rounded-xl card-shadow backdrop-blur-sm border border-white/30">
                     <div class="bg-gradient-to-br from-[#002855] to-[#6A5ACD] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-eye text-2xl"></i>
@@ -448,7 +448,7 @@
                     <h3 class="text-xl font-bold text-white mb-4 text-center">Visão</h3>
                     <p class="text-center text-white/90">Causar impacto social por meio da ciência estatística, promovendo a aplicação do conhecimento estatístico para a melhoria da sociedade e a resolução de desafios contemporâneos.</p>
                 </div>
-                
+
                 <div class="bg-white/20 p-8 rounded-xl card-shadow backdrop-blur-sm border border-white/30">
                     <div class="bg-gradient-to-br from-[#002855] to-[#6A5ACD] text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-heart text-2xl"></i>
@@ -488,19 +488,19 @@
     <section class="py-16 bg-white relative section-hidden">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-12 text-center">Siga-nos nas Redes Sociais</h2>
-            
+
             <div class="flex justify-center space-x-8">
-                <a href="https://www.instagram.com/obe.br/" target="_blank" 
+                <a href="https://www.instagram.com/obe.br/" target="_blank"
                    class="bg-[#002855] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover glow-effect"
                    aria-label="Instagram da OBE">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.linkedin.com/company/obe-br/posts/?feedView=all" target="_blank" 
+                <a href="https://www.linkedin.com/company/obe-br/posts/?feedView=all" target="_blank"
                    class="bg-[#002855] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover glow-effect"
                    aria-label="LinkedIn da OBE">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="mailto:marketing@obe-org.com.br" 
+                <a href="mailto:marketing@obe-org.com.br"
                    class="bg-[#002855] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl btn-hover glow-effect"
                    aria-label="E-mail da OBE">
                     <i class="fas fa-envelope"></i>
@@ -512,13 +512,13 @@
     <section id="contact" class="py-20 bg-[#0072CE] text-white relative section-hidden">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center drop-shadow-lg">Entre em Contato Conosco</h2>
-            
+
             <div class="max-w-4xl mx-auto">
                 <div class="text-center">
                     <div class="bg-white/20 p-8 rounded-xl card-shadow-lg backdrop-blur-sm border border-white/30">
                         <h3 class="text-xl font-bold text-white mb-4">Informações de Contato</h3>
                         <p class="mb-6 text-white/90">Estamos disponíveis para tirar dúvidas, receber sugestões e estabelecer parcerias.</p>
-                        
+
                         <div class="space-y-4">
                             <div class="flex items-center justify-center">
                                 <i class="fas fa-envelope text-[#40E0D0] text-xl mr-4 mt-1"></i>
@@ -535,7 +535,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="flex flex-col items-center justify-center mt-8">
                             <h4 class="text-lg font-bold text-white mb-4">Nossas Redes</h4>
                             <div class="flex space-x-4">
@@ -567,118 +567,111 @@
                     </a>
                     <p class="mt-2 text-sm opacity-80">Olimpíada Brasileira de Estatística</p>
                 </div>
-                
+
                 <div class="flex flex-col items-center md:items-end">
                     <p class="text-sm mb-4 opacity-80">Apoio:</p>
                     <div class="flex items-center">
-                        <img src="https://web.icmc.usp.br/SCAPINST/identidade_visual/logomarca/NO%20ICMC%20PRETO%20fundo%20transparente.png?Mobile=1&Source=%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3Dbde3e70c%2Da897%2D4e2a%2Dbf3e%2D7f5e9594bebd%26View%3Da7be44e2%2D1aa1%2D40e1%2Daa92%2Db8545c1c68b9%26RootFolder%3D%2FSCAPINST%2Fidentidade%5Fvisual%2Flogomarca%26FolderCTID%3D0x0120005CF1188E1C67B544B10D453367C2C98B%26CurrentPage%3D1" 
-                                alt="ICMC-USP" 
+                        <img src="https://web.icmc.usp.br/SCAPINST/identidade_visual/logomarca/NO%20ICMC%20PRETO%20fundo%20transparente.png?Mobile=1&Source=%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3Dbde3e70c%2Da897%2D4e2a%2Dbf3e%2D7f5e9594bebd%26View%3Da7be44e2%2D1aa1%2D40e1%2Daa92%2Db8545c1c68b9%26RootFolder%3D%2FSCAPINST%2Fidentidade%5Fvisual%2Flogomarca%26FolderCTID%3D0x0120005CF1188E1C67B544B10D453367C2C98B%26CurrentPage%3D1"
+                                alt="ICMC-USP"
                                 class="h-12">
                     </div>
                 </div>
             </div>
-            
+
             <div class="border-t border-white/20 mt-8 pt-6 text-center text-sm opacity-80">
                 <p>&copy; 2025 Olimpíada Brasileira de Estatística. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <button id="back-to-top" 
+    <button id="back-to-top"
             class="fixed bottom-8 right-8 bg-gradient-to-br from-[#0072CE] to-[#40E0D0] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg btn-hover glow-effect hidden"
             aria-label="Voltar ao topo">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <div id="thanks-popup" class="fixed inset-0 bg-black bg-opacity-70 z-[100] flex items-center justify-center p-4 opacity-0 invisible transition-opacity duration-300 ease-in-out">
+    <div id="status-popup" class="fixed inset-0 bg-black bg-opacity-70 z-[100] flex items-center justify-center p-4 opacity-0 invisible transition-opacity duration-300 ease-in-out">
         <div id="popup-content" class="bg-white rounded-xl max-w-xs sm:max-w-sm w-full mx-auto p-6 shadow-2xl relative transform scale-95 transition-all duration-300 ease-in-out">
             <div class="flex flex-col items-center text-center">
-                <div class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full inline-flex items-center mb-4">
-                    <i class="fas fa-trophy mr-2"></i>
-                    RESULTADOS DIVULGADOS
+                <div class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full inline-flex items-center mb-4">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    PRÓXIMA FASE INICIADA
                 </div>
-                <h3 class="text-xl font-bold text-[#002855] mb-2">Confira os Classificados!</h3>
+                <h3 class="text-xl font-bold text-[#002855] mb-2">A Segunda Fase Começou!</h3>
                 <p class="text-gray-700 text-sm mb-6">
-                    As notas da 1ª Fase já estão disponíveis. Veja a lista oficial de aprovados para a próxima etapa!
+                    Parabéns aos classificados! Acesse agora as instruções e o desafio da Segunda Fase.
                 </p>
-                <a href="#resultados" id="popup-redirect-btn" class="w-full bg-gradient-to-r from-[#0072CE] to-[#002855] text-white px-5 py-3 rounded-full font-medium btn-hover text-center">
-                    Ver Resultados Agora
+                <a href="segunda_fase.html" id="popup-redirect-btn" class="w-full bg-gradient-to-r from-[#0072CE] to-[#002855] text-white px-5 py-3 rounded-full font-medium btn-hover text-center">
+                    Acessar Segunda Fase
                 </a>
             </div>
         </div>
     </div>
     <script>
-        const thanksPopup = document.getElementById('thanks-popup');
+        const statusPopup = document.getElementById('status-popup'); // Renomeado para statusPopup
         const popupContent = document.getElementById('popup-content');
         const redirectButton = document.getElementById('popup-redirect-btn');
 
-        function openThanksPopup() {
-            if (!thanksPopup || !popupContent) return;
-            thanksPopup.classList.remove('invisible', 'opacity-0');
+        function openStatusPopup() { // Renomeado para openStatusPopup
+            if (!statusPopup || !popupContent) return;
+            statusPopup.classList.remove('invisible', 'opacity-0');
             popupContent.classList.remove('scale-95');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeThanksPopup() {
-            if (!thanksPopup || !popupContent) return;
-            thanksPopup.classList.add('opacity-0');
+        function closeStatusPopup() { // Renomeado para closeStatusPopup
+            if (!statusPopup || !popupContent) return;
+            statusPopup.classList.add('opacity-0');
             popupContent.classList.add('scale-95');
-            
+
             setTimeout(() => {
-                thanksPopup.classList.add('invisible');
+                statusPopup.classList.add('invisible');
                 document.body.style.overflow = 'auto';
             }, 300);
         }
-        
-        if(thanksPopup && popupContent && redirectButton) {
+
+        if(statusPopup && popupContent && redirectButton) {
             redirectButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                closeThanksPopup();
-                const targetElement = document.querySelector(redirectButton.getAttribute('href'));
-                if (targetElement) {
-                    setTimeout(() => {
-                         const offset = 80;
-                         const elementPosition = targetElement.getBoundingClientRect().top;
-                         const offsetPosition = elementPosition + window.pageYOffset - offset;
-                         window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }, 300);
-                }
+                // Não previne default se o link for para outra página
+                // Apenas fecha o popup
+                 closeStatusPopup();
+                // O navegador seguirá o link href="segunda_fase.html"
             });
 
-            thanksPopup.addEventListener('click', (event) => {
-                if (event.target === thanksPopup) {
-                    closeThanksPopup();
+            statusPopup.addEventListener('click', (event) => {
+                if (event.target === statusPopup) {
+                    closeStatusPopup();
                 }
             });
 
             document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape' && !thanksPopup.classList.contains('invisible')) {
-                    closeThanksPopup();
+                if (event.key === 'Escape' && !statusPopup.classList.contains('invisible')) {
+                    closeStatusPopup();
                 }
             });
         }
 
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         if (mobileMenuButton && mobileMenu) {
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
-            
+
             const mobileLinks = mobileMenu.querySelectorAll('a');
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
+                     // Fecha o menu se não for um link para outra página
+                     if (link.getAttribute('href').startsWith('#')) {
+                         mobileMenu.classList.add('hidden');
+                     }
                 });
             });
         }
-        
+
         const backToTopButton = document.getElementById('back-to-top');
-        
+
         if (backToTopButton) {
             window.addEventListener('scroll', () => {
                 if (window.pageYOffset > 300) {
@@ -687,30 +680,32 @@
                     backToTopButton.classList.add('hidden');
                 }
             });
-            
+
             backToTopButton.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            if (anchor.id === 'popup-redirect-btn') return;
+             // Garante que o botão do popup não seja afetado E
+             // Que links para outras páginas não tenham scroll suave
+             if (anchor.id === 'popup-redirect-btn' || !anchor.getAttribute('href').startsWith('#')) return;
 
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                     return;
                 };
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     const offset = 80;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - offset;
-                    
+
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: 'smooth'
@@ -725,7 +720,7 @@
 
             const increment = targetNumber / (duration / 16);
             let currentNumber = 0;
-            
+
             const interval = setInterval(() => {
                 currentNumber += increment;
                 if (currentNumber >= targetNumber) {
@@ -769,11 +764,11 @@
                 sectionObserver.observe(section);
             });
         }
-        
+
         window.addEventListener('load', () => {
             if (!window.location.hash) {
                 setTimeout(() => {
-                    openThanksPopup();
+                    openStatusPopup(); // Chama a função renomeada
                 }, 1000);
             }
 
@@ -783,7 +778,7 @@
                     const offset = 80;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - offset;
-                    
+
                     setTimeout(() => {
                          window.scrollTo({
                             top: offsetPosition,
