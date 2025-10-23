@@ -236,14 +236,13 @@
                 <a href="#about" class="nav-link text-lg font-medium py-2">Quem Somos</a>
                 <a href="#projects" class="nav-link text-lg font-medium py-2">Nossos Projetos</a>
                 <a href="#olympiad" class="nav-link text-lg font-medium py-2">A Olimpíada</a>
-                <a href="segunda_fase.html" class="nav-link text-lg font-medium py-2">Segunda Fase</a>
-                <a href="#contact" class="nav-link text-lg font-medium py-2">Contato</a>
+                <a href="#register" class="nav-link text-lg font-medium py-2">Participar</a> <a href="#contact" class="nav-link text-lg font-medium py-2">Contato</a>
                 <a href="segunda_fase.html" class="bg-gradient-to-r from-[#0072CE] to-[#40E0D0] text-white px-6 py-2 rounded-full font-medium text-center btn-hover glow-effect">
                     Segunda Fase Começou!
                 </a>
             </div>
         </div>
-    </header>
+        </header>
 
     <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-20 parallax">
         <div class="container mx-auto px-4 py-20 md:py-32">
@@ -374,7 +373,7 @@
         </div>
     </section>
 
-     <section id="resultados" class="py-20 bg-slate-100 relative section-hidden">
+    <section id="resultados" class="py-20 bg-slate-100 relative section-hidden">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-4">Materiais da 1ª Fase</h2>
             <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10">
@@ -662,10 +661,11 @@
             const mobileLinks = mobileMenu.querySelectorAll('a');
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                     // Fecha o menu se não for um link para outra página
+                     // Fecha o menu se for um link interno (#)
                      if (link.getAttribute('href').startsWith('#')) {
                          mobileMenu.classList.add('hidden');
                      }
+                     // Se for link externo (outra página), o navegador cuida disso
                 });
             });
         }
@@ -702,7 +702,7 @@
 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    const offset = 80;
+                    const offset = 80; // Ajustar se a altura do header mudar
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - offset;
 
